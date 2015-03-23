@@ -1,0 +1,4 @@
+#!/bin/bash
+apt-add-repository -y ppa:plasma-phone/ppa
+apt update
+apt-get install -y konsole

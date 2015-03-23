@@ -1,0 +1,7 @@
+Copyright Jonathan Riddell 2015 may be copied under the GNU GPL v2 or later
+
+Scripts to take an Ubuntu Touch image and remaster it for Kubuntu
+
+remaster-ubuntu-touch - download ubuntu touch, upload it to the arm server, download remastered image from arm server
+
+chroot-remaster - run in the chroot on the server to remaster the image
