@@ -25,3 +25,12 @@ apt-get remove -y whoopsie-preferences
 apt-get remove -y mir-*
 apt-get remove -y qtdeclarative5-ubuntu*
 
+touch /userdata/.writable_image
+touch /userdata/.adb_onlock
+service ssh start
+setprop persist.service.ssh true
+
+echo -n "manual
+exec /usr/sbin/sshd -D -o PasswordAuthentication=yes" > ssh.override
+
+
