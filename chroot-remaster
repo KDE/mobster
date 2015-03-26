@@ -15,3 +15,13 @@ apt-get install -y qtwayland
 apt-get install -y qt5-qpa-hwcomposer-plugin
 apt-get install -y plasma-phone-components
 
+apt-get remove -y libmircommon3
+apt-get remove -y indicator-bluetooth
+apt-get remove -y unity8-common unity8-private unity-system-compositor
+apt-get remove -y libubuntu*
+apt-get remove -y libunity*
+apt-get remove -y lightdm
+apt-get remove -y whoopsie-preferences
+apt-get remove -y mir-*
+apt-get remove -y qtdeclarative5-ubuntu*
+
