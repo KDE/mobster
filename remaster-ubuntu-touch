@@ -30,7 +30,10 @@ rsync -CvzapP --stats ${SERVER}:ubuntu-touch-remaster/extract/vivid-preinstalled
 echo === running shasum
 cd remaster
 sha256sum vivid-preinstalled-touch-armhf.tar.gz > SHA256SUMS
-
 cd ..
 
-
+DATE=`date --rfc-3339='seconds' | sed "s, ,.," | sed s,\+.*,, | sed s,-,, | sed s,-,, | sed s,:,, | sed s,:,,`
+echo === moving new image into remaster/daily-preinstalled/${DATE}
+mkdir -p remaster/daily-preinstalled/${DATE}
+mv remaster/vivid-preinstalled-touch-armhf.tar.gz remaster/daily-preinstalled/${DATE}
+mv remaster/SHA256SUMS remaster/daily-preinstalled/${DATE}
