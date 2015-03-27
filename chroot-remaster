@@ -2,3 +2,36 @@
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
 apt-get install -y konsole
+apt-get install -y greenisland
+apt-get install -y libandroid-properties
+apt-get install -y libhardware
+apt-get install -y libhybris
+apt-get install -y libhybris-common
+apt-get install -y libhybris-test
+apt-get install -y libhybris-utils
+apt-get install -y libkf5screen
+apt-get install -y libmedia
+apt-get install -y qtwayland
+apt-get install -y qt5-qpa-hwcomposer-plugin
+apt-get install -y plasma-phone-components
+
+#apt-get remove -y libmircommon3
+#apt-get remove -y indicator-bluetooth
+#apt-get remove -y unity8-common unity8-private unity-system-compositor
+#apt-get remove -y libubuntu*
+#apt-get remove -y libunity*
+#apt-get remove -y lightdm
+#apt-get remove -y whoopsie-preferences
+#apt-get remove -y mir-*
+#apt-get remove -y qtdeclarative5-ubuntu*
+
+mkdir /userdata
+touch /userdata/.writable_image
+touch /userdata/.adb_onlock
+service ssh start
+setprop persist.service.ssh true
+
+echo -n "manual
+exec /usr/sbin/sshd -D -o PasswordAuthentication=yes" > ssh.override
+
+echo "phablet:1234" | chpasswd

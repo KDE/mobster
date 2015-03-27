@@ -1,0 +1,113 @@
+[global]
+base_path = /home/ubuntu/kubuntu/system-image/
+#channels = trusty, trusty-proposed, trusty-customized
+channels = kubuntu-phone/devel-proposed, kubuntu-phone/devel-proposed2
+gpg_key_path = secret/gpg/keys/
+gpg_keyring_path = secret/gpg/keyrings/
+publish_path = /home/ubuntu/kubuntu/system-image/www
+state_path = state/
+#mirrors = a, b
+public_fqdn = kubuntu.plasma-mobile.org
+public_http_port = 80
+public_https_port = 443
+
+#[channel_kubuntu-phone/devel-proposed]
+#type = auto
+#versionbase = 1
+#fullcount = 15
+#files = ubuntu, device, custom-kubuntu, keyring, version
+#file_ubuntu = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;ubuntu
+#file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
+#file_custom-kubuntu = http;http://custom-image.kubuntu.co.uk/custom.tar.xz;name=kubuntu,monitor=http://custom-image.kubuntu.co.uk/VERSION
+#file_keyring = keyring;archive-master
+#file_version = version
+
+[channel_kubuntu-phone/devel-proposed]
+type = auto
+versionbase = 1
+fullcount = 15
+files = ubuntu, device, keyring, version
+file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/remaster/daily-preinstalled/;vivid;import=any
+file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
+file_keyring = keyring;archive-master
+file_version = version
+
+[channel_kubuntu-phone/devel-proposed2]
+type = auto
+versionbase = 1
+fullcount = 15
+files = ubuntu, device, keyring, version
+file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/remaster/daily-preinstalled/;vivid;import=any
+file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
+file_keyring = keyring;archive-master
+file_version = version
+
+
+[channel_test]
+type = auto
+versionbase = 1
+fullcount = 15
+files = ubuntu, device, custom-savilerow, keyring, version
+file_ubuntu = remote-system-image;https://system-image.ubuntu.com;trusty-proposed;ubuntu
+file_device = remote-system-image;https://system-image.ubuntu.com;trusty-proposed;device;keyring=archive-master
+file_custom-savilerow = http;https://jenkins.qa.ubuntu.com/job/savilerow-trusty/lastSuccessfulBuild/artifact/build/custom.tar.xz;name=custom-savilerow,monitor=https://jenkins.qa.ubuntu.com/job/savilerow-trusty/lastSuccessfulBuild/artifact/build/build_number
+file_keyring = keyring;archive-master
+file_version = version
+
+[channel_test3]
+type = auto
+versionbase = 1
+fullcount = 15
+files = ubuntu, device, custom-foo, keyring, version
+file_ubuntu = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;ubuntu
+file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
+file_custom-foo = http;http://starsky.19inch.net/~jr/tmp/foo.tar.xz;name=custom-foo,monitor=http://starsky.19inch.net/~jr/tmp/FOO
+file_keyring = keyring;archive-master
+file_version = version
+
+[channel_test4]
+type = auto
+versionbase = 1
+fullcount = 15
+files = ubuntu, device, keyring, version
+file_ubuntu = http;http://ec2-54-234-131-72.compute-1.amazonaws.com/ubuntu-vivid.tar.xz;name=ubuntu,monitor=http://ec2-54-234-131-72.compute-1.amazonaws.com/VERSION
+file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
+file_keyring = keyring;archive-master
+file_version = version
+
+[channel_trusty]
+type = manual
+versionbase = 1
+fullcount = 10
+
+[channel_trusty-proposed]
+type = auto
+versionbase = 1
+fullcount = 20
+deltabase = trusty, trusty-proposed
+files = ubuntu, device, version
+file_ubuntu = cdimage-ubuntu;daily-preinstalled;trusty,import=any
+file_device = cdimage-device;daily-preinstalled;trusty,import=any
+file_version = version
+
+[channel_trusty-customized]
+type = auto
+versionbase = 1
+fullcount = 15
+files = ubuntu, device, custom, version
+file_ubuntu = system-image;trusty;file=ubuntu
+file_device = system-image;trusty;file=device
+file_custom = http;http://www.example.net/custom/custom.tar.xz;name=custom,monitor=http://www.example.net/custom/build_number
+file_version = version
+
+#[mirror_default]
+#ssh_user = mirror
+#ssh_key = secret/ssh/mirror
+#ssh_port = 22
+#ssh_command = sync-mirror
+
+#[mirror_a]
+#ssh_host = a.example.com
+
+#[mirror_b]
+#ssh_host = b.example.com
