@@ -1,7 +1,7 @@
 [global]
 base_path = /home/ubuntu/kubuntu/system-image/
 #channels = trusty, trusty-proposed, trusty-customized
-channels = kubuntu-phone/devel-proposed, kubuntu-phone/devel-proposed2
+channels = kubuntu-phone/devel, kubuntu-phone/devel-proposed
 gpg_key_path = secret/gpg/keys/
 gpg_keyring_path = secret/gpg/keyrings/
 publish_path = /home/ubuntu/kubuntu/system-image/www
@@ -11,18 +11,7 @@ public_fqdn = kubuntu.plasma-mobile.org
 public_http_port = 80
 public_https_port = 443
 
-#[channel_kubuntu-phone/devel-proposed]
-#type = auto
-#versionbase = 1
-#fullcount = 15
-#files = ubuntu, device, custom-kubuntu, keyring, version
-#file_ubuntu = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;ubuntu
-#file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
-#file_custom-kubuntu = http;http://custom-image.kubuntu.co.uk/custom.tar.xz;name=kubuntu,monitor=http://custom-image.kubuntu.co.uk/VERSION
-#file_keyring = keyring;archive-master
-#file_version = version
-
-[channel_kubuntu-phone/devel-proposed]
+[channel_kubuntu-phone/devel]
 type = auto
 versionbase = 1
 fullcount = 15
@@ -32,12 +21,12 @@ file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-propos
 file_keyring = keyring;archive-master
 file_version = version
 
-[channel_kubuntu-phone/devel-proposed2]
+[channel_kubuntu-phone/devel-proposed]
 type = auto
 versionbase = 1
 fullcount = 15
 files = ubuntu, device, keyring, version
-file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/remaster/daily-preinstalled/;vivid;import=any
+file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/remaster-proposed/daily-preinstalled/;vivid;import=any
 file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
 file_keyring = keyring;archive-master
 file_version = version

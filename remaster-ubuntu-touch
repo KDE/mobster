@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Copyright Jonathan Riddell 2015, may be copied under GNU GPL v2 or later
+# download ubuntu touch, upload it to the arm server, download remastered image from arm server
+
 SERVER=root@212.47.238.144
 
 mkdir -p daily-preinstalled
@@ -23,17 +26,12 @@ echo === running remaster script on arm server
 ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
 echo === making a new tar - this takes an age
 ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf vivid-preinstalled-touch-armhf.tar.gz *"
+cd ..
 echo === downloading tar
-cd ..
-mkdir -p remaster
-rsync -CvzapP --stats ${SERVER}:ubuntu-touch-remaster/extract/vivid-preinstalled-touch-armhf.tar.gz remaster/
-echo === running shasum
-cd remaster
-sha256sum vivid-preinstalled-touch-armhf.tar.gz > SHA256SUMS
-cd ..
-
 DATE=`date --rfc-3339='seconds' | sed "s, ,.," | sed s,\+.*,, | sed s,-,, | sed s,-,, | sed s,:,, | sed s,:,,`
-echo === moving new image into remaster/daily-preinstalled/${DATE}
-mkdir -p remaster/daily-preinstalled/${DATE}
-mv remaster/vivid-preinstalled-touch-armhf.tar.gz remaster/daily-preinstalled/${DATE}
-mv remaster/SHA256SUMS remaster/daily-preinstalled/${DATE}
+mkdir -p remaster-proposed/daily-preinstalled/${DATE}
+rsync -CvzapP --stats ${SERVER}:ubuntu-touch-remaster/extract/vivid-preinstalled-touch-armhf.tar.gz remaster-proposed/daily-preinstalled/${DATE}
+echo === running shasum
+cd remaster-proposed/daily-preinstalled/${DATE}
+sha256sum vivid-preinstalled-touch-armhf.tar.gz > SHA256SUMS
+cd -
