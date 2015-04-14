@@ -1,16 +1,18 @@
 #!/bin/bash
+set -x
+
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
 apt-get install -y konsole
 apt-get install -y greenisland
-apt-get install -y libandroid-properties
+apt-get install -y libandroid-properties1
 apt-get install -y libhardware
 apt-get install -y libhybris
-apt-get install -y libhybris-common
+apt-get install -y libhybris-common1
 apt-get install -y libhybris-test
 apt-get install -y libhybris-utils
-apt-get install -y libkf5screen
-apt-get install -y libmedia
+apt-get install -y libkf5screen6
+apt-get install -y libmedia1
 apt-get install -y qtwayland
 apt-get install -y qt5-qpa-hwcomposer-plugin
 apt-get install -y plasma-phone-components

@@ -14,7 +14,7 @@ public_https_port = 443
 [channel_kubuntu-phone/devel]
 type = auto
 versionbase = 1
-fullcount = 15
+fullcount = 1
 files = ubuntu, device, keyring, version
 file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/remaster/daily-preinstalled/;vivid;import=any
 file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
@@ -24,7 +24,7 @@ file_version = version
 [channel_kubuntu-phone/devel-proposed]
 type = auto
 versionbase = 1
-fullcount = 15
+fullcount = 1
 files = ubuntu, device, keyring, version
 file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/remaster-proposed/daily-preinstalled/;vivid;import=any
 file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 DATE=`date --rfc-3339='seconds' | sed "s, ,--," | sed s,\+.*,,`
 #echo == new custom tar
 #cd /home/ubuntu/kubuntu/custom-image; ./kubuntu-mobile-extra-tar.sh

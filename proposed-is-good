@@ -1,0 +1,5 @@
+# you have tested a proposed image and want to move it to final
+# ./proposed-is-good 20150330.150615
+
+cd /home/ubuntu/kubuntu/remaster/remaster/daily-preinstalled
+ln -s ../../remaster-proposed/daily-preinstalled/$1/
