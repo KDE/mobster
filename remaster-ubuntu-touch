@@ -27,7 +27,8 @@ ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
 echo === running remaster script on arm server  `date`
 ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
 echo === making a new tar - this takes an age  `date`
-ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf vivid-preinstalled-touch-armhf.tar.gz *"
+ssh ${SERVER} "apt-get install pigz"
+ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf - * | pigz > vivid-preinstalled-touch-armhf.tar.gz"
 cd ..
 echo === downloading tar  `date`
 DATE=`date --rfc-3339='seconds' | sed "s, ,.," | sed s,\+.*,, | sed s,-,, | sed s,-,, | sed s,:,, | sed s,:,,`
