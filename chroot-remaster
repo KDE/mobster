@@ -23,6 +23,9 @@ apt-get install -y plasma-phone-components
 #apt-get remove -y qtdeclarative5-ubuntu*
 apt-get remove -y language-pack-touch-* libunity9 libwebkitgtk-3.0-0 libgnome-bluetooth11
 
+apt-get clean
+apt-get autoremove
+
 mkdir /userdata
 touch /userdata/.writable_image
 touch /userdata/.adb_onlock
