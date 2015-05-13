@@ -14,7 +14,7 @@ apt-get remove -y account-plugin-facebook account-plugin-flickr account-plugin-g
 
 apt-get -y clean
 apt-get -y autoremove
-
+apt-get -f install
 apt-get -y install software-properties-common 
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
