@@ -11,7 +11,7 @@ mkdir -p daily-preinstalled
 cd daily-preinstalled
 
 echo === downloading from cdimage.ubuntu.com `date`
-zsync http://cdimage.ubuntu.com/ubuntu-touch/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
+zsync http://cdimage.ubuntu.com/ubuntu-touch/vivid/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
 
 echo === uploading to arm server `date`
 rsync -CvzapP --stats vivid-preinstalled-touch-armhf.tar.gz ${SERVER}:ubuntu-touch-remaster/
