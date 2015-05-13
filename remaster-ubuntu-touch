@@ -28,7 +28,7 @@ echo === running remaster script on arm server  `date`
 ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
 echo === making a new tar - this takes an age  `date`
 ssh ${SERVER} "apt-get install pigz"
-ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf - * | pigz > vivid-preinstalled-touch-armhf.tar.gz"
+ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
 cd ..
 echo === downloading tar  `date`
 DATE=`date +%Y%m%d.%H%M%S`
