@@ -3,7 +3,7 @@
 # Copyright Jonathan Riddell 2015, may be copied under GNU GPL v2 or later
 # download ubuntu touch, upload it to the arm server, download remastered image from arm server
 
-set -x
+set -ex
 
 SERVER=root@212.47.249.27
 
