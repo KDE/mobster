@@ -26,17 +26,17 @@ echo === setting up resolve.conf in chroot  `date`
 ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
 
 echo === Binding /proc, /sys and /dev
-ssh ${SERVER} mount --bind /sys /chroot-remaster/sys
-ssh ${SERVER} mount --bind /proc /chroot-remaster/sys
-ssh ${SERVER} mount --bind /sys /chroot-remaster/sys
+ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract
+ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract
+ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract
 
 echo === running remaster script on arm server  `date`
 ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
 
-echo === Binding /proc, /sys and /dev
-ssh ${SERVER} umount /chroot-remaster/sys
-ssh ${SERVER} umount /chroot-remaster/proc
-ssh ${SERVER} umount /chroot-remaster/dev
+echo === Un-Binding /proc, /sys and /dev
+ssh ${SERVER} umount ubuntu-touch-remaster/extract/sys
+ssh ${SERVER} umount ubuntu-touch-remaster/extract/dev
+ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
 
 echo === making a new tar - this takes an age  `date`
 ssh ${SERVER} "apt-get install pigz"
