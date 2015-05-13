@@ -31,7 +31,7 @@ ssh ${SERVER} "apt-get install pigz"
 ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf - * | pigz > vivid-preinstalled-touch-armhf.tar.gz"
 cd ..
 echo === downloading tar  `date`
-DATE=`date --rfc-3339='seconds' | sed "s, ,.," | sed s,\+.*,, | sed s,-,, | sed s,-,, | sed s,:,, | sed s,:,,`
+DATE=`date +%Y%m%d.%H%M%S`
 mkdir -p remaster-proposed/daily-preinstalled/${DATE}
 rsync -CvzapP --stats ${SERVER}:ubuntu-touch-remaster/extract/vivid-preinstalled-touch-armhf.tar.gz remaster-proposed/daily-preinstalled/${DATE}
 echo === running shasum  `date`
