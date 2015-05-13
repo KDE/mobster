@@ -4,13 +4,8 @@ set -x
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
 apt-get install -y konsole
-apt-get install -y greenisland
 apt-get install -y libandroid-properties1
 apt-get install -y libhardware
-apt-get install -y libhybris
-apt-get install -y libhybris-common1
-apt-get install -y libhybris-test
-apt-get install -y libhybris-utils
 apt-get install -y libkf5screen6
 apt-get install -y libmedia1
 apt-get install -y qtwayland
@@ -26,6 +21,7 @@ apt-get install -y plasma-phone-components
 #apt-get remove -y whoopsie-preferences
 #apt-get remove -y mir-*
 #apt-get remove -y qtdeclarative5-ubuntu*
+apt-get remove -y language-pack-touch-* libunity9 libwebkitgtk-3.0-0 libgnome-bluetooth11
 
 mkdir /userdata
 touch /userdata/.writable_image
