@@ -26,9 +26,9 @@ echo === setting up resolve.conf in chroot  `date`
 ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
 
 echo === Binding /proc, /sys and /dev
-ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract
-ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract
-ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract
+ssh ${SERVER} mount --bind /dev  ubuntu-touch-remaster/extract/dev
+ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract/proc
+ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract/sys
 
 echo === running remaster script on arm server  `date`
 ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
