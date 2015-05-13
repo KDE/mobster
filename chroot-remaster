@@ -1,6 +1,20 @@
 #!/bin/bash
 set -x
 
+#apt-get remove -y libmircommon3
+#apt-get remove -y indicator-bluetooth
+#apt-get remove -y unity8-common unity8-private unity-system-compositor
+#apt-get remove -y libubuntu*
+#apt-get remove -y libunity*
+#apt-get remove -y lightdm
+#apt-get remove -y whoopsie-preferences
+#apt-get remove -y mir-*
+#apt-get remove -y qtdeclarative5-ubuntu*
+apt-get remove -y account-plugin-facebook account-plugin-flickr account-plugin-google account-plugin-twitter adwaita-icon-theme apg desktop-file-utils gnome-bluetooth gnome-menus humanity-icon-theme ibus indicator-bluetooth indicator-keyboard indicator-location indicator-network indicator-transfer language-pack-touch-ast language-pack-touch-bg language-pack-touch-bs language-pack-touch-ca language-pack-touch-cs language-pack-touch-da language-pack-touch-de language-pack-touch-el language-pack-touch-en language-pack-touch-es language-pack-touch-eu language-pack-touch-fi language-pack-touch-fr language-pack-touch-gd language-pack-touch-gl language-pack-touch-he language-pack-touch-hu language-pack-touch-id language-pack-touch-it language-pack-touch-ja language-pack-touch-ko language-pack-touch-lt language-pack-touch-lv language-pack-touch-ms language-pack-touch-nb language-pack-touch-nl language-pack-touch-oc language-pack-touch-pl language-pack-touch-pt language-pack-touch-ro language-pack-touch-ru language-pack-touch-sk language-pack-touch-sl language-pack-touch-sr language-pack-touch-sv language-pack-touch-tr language-pack-touch-ug language-pack-touch-uk language-pack-touch-zh-hans language-pack-touch-zh-hant libaspell15 libcanberra-gtk3-0 libcheese-gtk23 libcheese7 libclutter-1.0-0 libclutter-gst-2.0-0 libclutter-gtk-1.0-0 libcogl-pango20 libcogl-path20 libcogl20 libcontent-hub0 libcrack2 libenchant1c2a libfcitx-config4 libfcitx-gclient0 libfcitx-utils0 libgnome-bluetooth11 libgnome-desktop-3-10 libgnome-menu-3-0 libgnomekbd8 libgtop2-10 libharfbuzz-icu0 libibus-1.0-5 libjavascriptcoregtk-3.0-0 liblightdm-gobject-1-0 libnm-gtk0 libpwquality-common libpwquality1 libubuntu-app-launch2 libubuntu-application-api2 libubuntu-download-manager-client0 libubuntu-download-manager-common0 libubuntu-location-service2 libubuntu-upload-manager-common0 libubuntuoneauth-2.0-0 libunity-action-qt1 libunity-api0 libunity-control-center1 libunity-protocol-private0 libunity-scopes3 libunity-settings-daemon1 libunity9 libwacom2 libwebkitgtk-3.0-0 libwebp5 libxklavier16 lightdm myspell-ca myspell-es myspell-it myspell-pl myspell-pt-br myspell-pt-pt nano obex-data-server openbox qtdeclarative5-ubuntu-contacts0.1 qtdeclarative5-ubuntu-content1 qtdeclarative5-ubuntu-telephony-phonenumber0.1 qtdeclarative5-ubuntu-telephony0.1 qtdeclarative5-ubuntu-ui-extras-browser-plugin qtdeclarative5-ubuntu-ui-extras0.2 qtdeclarative5-ubuntu-web-plugin qtdeclarative5-ubuntuone1.0 qtdeclarative5-usermetrics0.1 qtmir-android qtubuntu-sensors suru-icon-theme system-image-common system-image-dbus telephony-service ubuntu-application-api2-test ubuntu-application-api2-touch ubuntu-download-manager ubuntu-keyboard ubuntu-location-provider-here ubuntu-location-service-bin ubuntu-mobile-icons ubuntu-mono ubuntu-push-client ubuntu-system-settings ubuntu-system-settings-online-accounts ubuntu-touch-customization-hooks ubuntu-touch-session ubuntu-upload-manager ubuntuone-client-data unity-asset-pool unity-control-center unity-plugin-scopes unity-scope-mediascanner2 unity-settings-daemon unity-system-compositor unity8 url-dispatcher whoopsie whoopsie-preferences
+
+apt-get -y clean
+apt-get -y autoremove
+
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
 apt-get install -y konsole
@@ -12,19 +26,7 @@ apt-get install -y qtwayland
 apt-get install -y qt5-qpa-hwcomposer-plugin
 apt-get install -y plasma-phone-components
 
-#apt-get remove -y libmircommon3
-#apt-get remove -y indicator-bluetooth
-#apt-get remove -y unity8-common unity8-private unity-system-compositor
-#apt-get remove -y libubuntu*
-#apt-get remove -y libunity*
-#apt-get remove -y lightdm
-#apt-get remove -y whoopsie-preferences
-#apt-get remove -y mir-*
-#apt-get remove -y qtdeclarative5-ubuntu*
-apt-get remove -y language-pack-touch-* libunity9 libwebkitgtk-3.0-0 libgnome-bluetooth11
-
-apt-get clean
-apt-get autoremove
+apt-get -y clean
 
 mkdir /userdata
 touch /userdata/.writable_image
