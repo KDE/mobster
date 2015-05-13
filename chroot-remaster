@@ -15,8 +15,13 @@ apt-get remove -y account-plugin-facebook account-plugin-flickr account-plugin-g
 apt-get -y clean
 apt-get -y autoremove
 
+apt-get -y install software-properties-common 
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
+apt-get install -y libhybris
+apt-get install -y libhybris-common1
+apt-get install -y libhybris-test
+apt-get install -y libhybris-utils
 apt-get install -y konsole
 apt-get install -y libandroid-properties1
 apt-get install -y libhardware
