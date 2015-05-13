@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x
 
+echo 'Debug::pkgProblemResolver "true";' >> /etc/apt/apt.conf.d/debug
+mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
+ln -s /bin/true /usr/sbin/invoke-rc.d
 #apt-get remove -y libmircommon3
 #apt-get remove -y indicator-bluetooth
 #apt-get remove -y unity8-common unity8-private unity-system-compositor
@@ -14,8 +17,8 @@ apt-get remove -y account-plugin-facebook account-plugin-flickr account-plugin-g
 
 apt-get -y clean
 apt-get -y autoremove
-apt-get -f install
-apt-get -y install software-properties-common 
+apt-get -yf install
+apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
 apt update
 apt-get install -y libhybris
@@ -32,6 +35,10 @@ apt-get install -y qt5-qpa-hwcomposer-plugin
 apt-get install -y plasma-phone-components
 
 apt-get -y clean
+
+# Cleanup
+rm -f /etc/apt/apt.conf.d/debug
+mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 
 mkdir /userdata
 touch /userdata/.writable_image
