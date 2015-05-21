@@ -1,0 +1,4 @@
+MAILTO=ubuntu
+
+45 4 * * * /home/ubuntu/kubuntu/remaster/cron >> /home/ubuntu/kubuntu/CRONLOG
+
