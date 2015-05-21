@@ -5,3 +5,6 @@ Scripts to take an Ubuntu Touch image and remaster it for Kubuntu
 remaster-ubuntu-touch - download ubuntu touch, upload it to the arm server, download remastered image from arm server
 
 chroot-remaster - run in the chroot on the server to remaster the image
+
+works with system-image from
+http://bazaar.launchpad.net/~ubuntu-system-image/ubuntu-system-image/server/
