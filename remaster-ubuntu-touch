@@ -3,9 +3,9 @@
 # Copyright Jonathan Riddell 2015, may be copied under GNU GPL v2 or later
 # download ubuntu touch, upload it to the arm server, download remastered image from arm server
 
-set -ex
+set -x
 
-SERVER=root@212.47.249.27
+SERVER=root@212.47.241.146
 
 mkdir -p daily-preinstalled
 cd daily-preinstalled
@@ -21,27 +21,30 @@ ssh ${SERVER} rm -rf /root/ubuntu-touch-remaster/extract
 ssh ${SERVER} mkdir -p /root/ubuntu-touch-remaster/extract
 ssh ${SERVER} tar xf ubuntu-touch-remaster/vivid-preinstalled-touch-armhf.tar.gz -C ubuntu-touch-remaster/extract
 echo === uploading remaster script on arm server `date`
-scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
+#scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
 echo === setting up resolve.conf in chroot  `date`
-ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
+#ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
 
 echo === Binding /proc, /sys and /dev
-ssh ${SERVER} mount --bind /dev  ubuntu-touch-remaster/extract/dev
-ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract/proc
-ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract/sys
+#ssh ${SERVER} mount --bind /dev  ubuntu-touch-remaster/extract/dev
+#ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract/proc
+#ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract/sys
 
 echo === running remaster script on arm server  `date`
-ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
+#ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
 
 echo === Un-Binding /proc, /sys and /dev
-ssh ${SERVER} umount ubuntu-touch-remaster/extract/sys
-ssh ${SERVER} umount ubuntu-touch-remaster/extract/dev
-ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
+#ssh ${SERVER} umount ubuntu-touch-remaster/extract/sys
+#ssh ${SERVER} umount ubuntu-touch-remaster/extract/dev
+#ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
 
 echo === making a new tar - this takes an age  `date`
-ssh ${SERVER} "apt-get install pigz"
-ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
+#ssh ${SERVER} "apt-get install pigz"
+#ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar cf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
+ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar zcf vivid-preinstalled-touch-armhf.tar.gz *"
+
 cd ..
+
 echo === downloading tar  `date`
 DATE=`date +%Y%m%d.%H%M%S`
 mkdir -p remaster-proposed/daily-preinstalled/${DATE}
