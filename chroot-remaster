@@ -36,7 +36,7 @@ mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 mkdir /userdata
 touch /userdata/.writable_image
 touch /userdata/.adb_onlock
-setprop persist.service.ssh true
+setprop persist.service.ssh true || true
 
 echo -n "manual
 exec /usr/sbin/sshd -D -o PasswordAuthentication=yes" > ssh.override
