@@ -12,6 +12,8 @@ CACHEDIR=$__dir__/cache
 OUTDIR=$__dir__/output
 EXTRACTDIR=$__dir__/ubuntu-touch-remaster/extract
 
+TAR="tar --numeric-owner --atime-preserve --preserve-permissions"
+
 function chroot_teardown {
   if [ -z "$REMASTER_CHROOT_SETUP" ]; then
     return
@@ -61,7 +63,7 @@ img=$CACHEDIR/vivid-preinstalled-touch-armhf.tar.gz
 popd
 
 echo "=== extracting reference image  `date`"
-tar -xpf $img -C $EXTRACTDIR
+$TAR --preserve-order -xpf $img -C $EXTRACTDIR
 
 # chroot_setup
 #
@@ -76,5 +78,5 @@ echo "=== making a new tar - this takes an age  `date`"
 # image import, so the gzip we output here will not be the one used for
 # devices anyway. might as well improve for transfer here. all things considered
 pushd $EXTRACTDIR
-tar -cp * | gzip --rsyncable -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
+$TAR -cp * | gzip --rsyncable -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
 popd
