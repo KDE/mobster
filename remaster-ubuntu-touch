@@ -1,56 +1,23 @@
 #!/bin/bash
 
-# Copyright Jonathan Riddell 2015, may be copied under GNU GPL v2 or later
+# Copyright Jonathan Riddell and Harald Sitter 2015, may be copied under GNU GPL v2 or later
 # download ubuntu touch, upload it to the arm server, download remastered image from arm server
 
-set -x
+set -ex
 
 SERVER=root@212.47.241.146
+OUTPUTIMG=vivid-preinstalled-touch-armhf.tar.gz
 
-mkdir -p daily-preinstalled
-cd daily-preinstalled
+echo "=== Running remote server harness  `date`"
+scp remote-remaster $SERVER:/root
+ssh $SERVER bash /root/remote-remaster
 
-echo === downloading from cdimage.ubuntu.com `date`
-zsync http://cdimage.ubuntu.com/ubuntu-touch/vivid/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
-
-echo === uploading to arm server `date`
-rsync -CvzapP --stats vivid-preinstalled-touch-armhf.tar.gz ${SERVER}:ubuntu-touch-remaster/
-
-echo === extracting on arm server - this will take some time `date`
-ssh ${SERVER} rm -rf /root/ubuntu-touch-remaster/extract
-ssh ${SERVER} mkdir -p /root/ubuntu-touch-remaster/extract
-ssh ${SERVER} tar xf ubuntu-touch-remaster/vivid-preinstalled-touch-armhf.tar.gz -C ubuntu-touch-remaster/extract
-echo === uploading remaster script on arm server `date`
-#scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
-echo === setting up resolve.conf in chroot  `date`
-#ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
-
-echo === Binding /proc, /sys and /dev
-#ssh ${SERVER} mount --bind /dev  ubuntu-touch-remaster/extract/dev
-#ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract/proc
-#ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract/sys
-
-echo === running remaster script on arm server  `date`
-#ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
-
-echo === Un-Binding /proc, /sys and /dev
-#ssh ${SERVER} umount ubuntu-touch-remaster/extract/sys
-#ssh ${SERVER} umount ubuntu-touch-remaster/extract/dev
-#ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
-
-echo === making a new tar - this takes an age  `date`
-#ssh ${SERVER} "apt-get install pigz"
-#ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar cf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
-ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract && tar -cf vivid-preinstalled-touch-armhf.tar . && gzip -9 vivid-preinstalled-touch-armhf.tar"
-
-cd ..
-
-echo === downloading tar  `date`
+echo "=== downloading tar  `date`"
 DATE=`date +%Y%m%d.%H%M%S`
-mkdir -p remaster-proposed/daily-preinstalled/${DATE}
-#rsync -CvzapP --stats ${SERVER}:ubuntu-touch-remaster/extract/vivid-preinstalled-touch-armhf.tar.gz remaster-proposed/daily-preinstalled/${DATE}
-rsync -CvzapP --stats ${SERVER}:ubuntu-touch-remaster/vivid-preinstalled-touch-armhf.tar.gz remaster-proposed/daily-preinstalled/${DATE}
-echo === running shasum  `date`
-cd remaster-proposed/daily-preinstalled/${DATE}
-sha256sum vivid-preinstalled-touch-armhf.tar.gz > SHA256SUMS
-cd -
+IMGDIR=remaster-proposed/daily-preinstalled/${DATE}
+mkdir -p $IMGDIR
+scp $SERVER:/root/output/$OUTPUTIMG $IMGDIR
+
+echo "=== running shasum  `date`"
+cd $IMGDIR
+sha256sum $OUTPUTIMG > SHA256SUMS

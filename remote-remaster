@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Remote (ARM server) remaster script to be run on the remote. This is
+# essentially the remote harness.
+#
+# Copyright Harald Sitter 2015, may be copied under GNU GPL v2 or
+
+set -ex
+
+$OUTDIR=/root/output
+
+rm -rf $OUTDIR
+mkdir -p $OUTDIR
+
+cd $OUTDIR
+zsync http://cdimage.ubuntu.com/ubuntu-touch/vivid/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
+exit 0
+
+echo "=== extracting on arm server - this will take some time `date`"
+# rm -rf /root/ubuntu-touch-remaster/extract
+# mkdir -p /root/ubuntu-touch-remaster/extract
+# tar xf ubuntu-touch-remaster/vivid-preinstalled-touch-armhf.tar.gz -C ubuntu-touch-remaster/extract
+
+echo "=== uploading remaster script on arm server `date`"
+#scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
+echo === setting up resolve.conf in chroot  `date`
+#ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
+
+echo "=== Binding /proc, /sys and /dev"
+#ssh ${SERVER} mount --bind /dev  ubuntu-touch-remaster/extract/dev
+#ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract/proc
+#ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract/sys
+
+echo "=== running remaster script on arm server  `date`"
+#ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
+
+echo "=== Un-Binding /proc, /sys and /dev"
+#ssh ${SERVER} umount ubuntu-touch-remaster/extract/sys
+#ssh ${SERVER} umount ubuntu-touch-remaster/extract/dev
+#ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
+
+echo "=== making a new tar - this takes an age  `date`"
+#ssh ${SERVER} "apt-get install pigz"
+#ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar cf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
+pushd /root/ubuntu-touch-remaster/extract
+tar -cvf . | gzip -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
+popd
