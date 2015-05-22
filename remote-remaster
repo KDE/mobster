@@ -7,7 +7,7 @@
 
 set -ex
 
-$OUTDIR=/root/output
+OUTDIR=/root/output
 
 rm -rf $OUTDIR
 mkdir -p $OUTDIR
