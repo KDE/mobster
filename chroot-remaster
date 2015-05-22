@@ -21,9 +21,12 @@ apt-get install -y libandroid-properties1
 apt-get install -y libhardware2
 apt-get install -y libkf5screen6
 apt-get install -y libmedia1
-apt-get install -y qtwayland
-apt-get install -y qt5-qpa-hwcomposer-plugin
-apt-get install -y plasma-phone-components
+apt-get install -y \
+  kwin \
+  plasma-phone-components \
+  plasma-phone-settings \
+  qtwayland5 \
+  xwayland
 
 apt-get -y clean
 
