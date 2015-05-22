@@ -40,5 +40,3 @@ setprop persist.service.ssh true || true
 
 echo -n "manual
 exec /usr/sbin/sshd -D -o PasswordAuthentication=yes" > ssh.override
-
-echo "phablet:1234" | chpasswd
