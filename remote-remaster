@@ -12,6 +12,40 @@ CACHEDIR=$__dir__/cache
 OUTDIR=$__dir__/output
 EXTRACTDIR=$__dir__/ubuntu-touch-remaster/extract
 
+function chroot_teardown {
+  if [ -z "$REMASTER_CHROOT_SETUP" ]; then
+    return
+  fi
+
+  echo "=== Un-Binding /proc, /sys and /dev"
+  umount $EXTRACTDIR/sys
+  umount $EXTRACTDIR/dev
+  umount $EXTRACTDIR/proc
+
+  echo "=== removing resolve.conf in chroot  `date`"
+  rm $EXTRACTDIR/etc/resolv.conf
+
+  trap - SIGHUP SIGINT SIGTERM
+  unset REMASTER_CHROOT_SETUP
+}
+
+function chroot_setup {
+  if [ ! -z "$REMASTER_CHROOT_SETUP" ]; then
+    return
+  fi
+
+  export REMASTER_CHROOT_SETUP=1
+  trap chroot_teardown SIGHUP SIGINT SIGTERM
+
+  echo "=== setting up resolve.conf in chroot  `date`"
+  cp /etc/resolv.conf $EXTRACTDIR/etc/
+
+  echo "=== Binding /proc, /sys and /dev"
+  mount --bind /dev  $EXTRACTDIR/dev
+  mount --bind /proc $EXTRACTDIR/proc
+  mount --bind /sys  $EXTRACTDIR/sys
+}
+
 [[ -d "$CACHEDIR" ]] || mkdir -p $CACHEDIR
 
 rm -rf $OUTDIR
@@ -29,23 +63,13 @@ popd
 echo "=== extracting reference image  `date`"
 tar -xpf $img -C $EXTRACTDIR
 
-echo "=== uploading remaster script on arm server `date`"
-#scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
-echo "=== setting up resolve.conf in chroot  `date`"
-#ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
-
-echo "=== Binding /proc, /sys and /dev"
-#ssh ${SERVER} mount --bind /dev  ubuntu-touch-remaster/extract/dev
-#ssh ${SERVER} mount --bind /proc ubuntu-touch-remaster/extract/proc
-#ssh ${SERVER} mount --bind /sys  ubuntu-touch-remaster/extract/sys
-
-echo "=== running remaster script on arm server  `date`"
-#ssh ${SERVER} chroot ubuntu-touch-remaster/extract /chroot-remaster
-
-echo "=== Un-Binding /proc, /sys and /dev"
-#ssh ${SERVER} umount ubuntu-touch-remaster/extract/sys
-#ssh ${SERVER} umount ubuntu-touch-remaster/extract/dev
-#ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
+# chroot_setup
+#
+# echo "=== Entering chroot  `date`"
+# cp $__dir__/chroot-remaster $EXTRACTDIR/remaster
+# chroot $EXTRACTDIR /bin/bash /remaster
+#
+# chroot_teardown
 
 echo "=== making a new tar - this takes an age  `date`"
 # gzip rsyncable as the gz is being extracted and meddled with as part of the
