@@ -21,10 +21,8 @@ mkdir -p $EXTRACTDIR
 
 echo "=== syncing reference image  `date`"
 pushd $CACHEDIR
-cd $OUTDIR
 zsync http://cdimage.ubuntu.com/ubuntu-touch/vivid/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
 img=$CACHEDIR/vivid-preinstalled-touch-armhf.tar.gz
-exit 0
 popd
 
 echo "=== extracting reference image  `date`"
