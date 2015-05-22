@@ -24,7 +24,6 @@ apt-get install -y libmedia1
 apt-get install -y \
   kwin \
   plasma-phone-components \
-  plasma-phone-settings \
   qtwayland5 \
   xwayland
 
