@@ -75,4 +75,6 @@ echo "=== making a new tar - this takes an age  `date`"
 # gzip rsyncable as the gz is being extracted and meddled with as part of the
 # image import, so the gzip we output here will not be the one used for
 # devices anyway. might as well improve for transfer here. all things considered
-tar -cp -C $EXTRACTDIR . | gzip --rsyncable -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
+pushd $EXTRACTDIR
+tar -cp * | gzip --rsyncable -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
+popd
