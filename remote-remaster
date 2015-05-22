@@ -65,13 +65,13 @@ popd
 echo "=== extracting reference image  `date`"
 $TAR --preserve-order -xpf $img -C $EXTRACTDIR
 
-# chroot_setup
-#
-# echo "=== Entering chroot  `date`"
-# cp $__dir__/chroot-remaster $EXTRACTDIR/remaster
-# chroot $EXTRACTDIR /bin/bash /remaster
-#
-# chroot_teardown
+chroot_setup
+
+echo "=== Entering chroot  `date`"
+cp $__dir__/chroot-remaster $EXTRACTDIR/remaster
+chroot $EXTRACTDIR /bin/bash /remaster
+
+chroot_teardown
 
 echo "=== making a new tar - this takes an age  `date`"
 # gzip rsyncable as the gz is being extracted and meddled with as part of the
