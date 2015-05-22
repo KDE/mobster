@@ -30,7 +30,7 @@ tar -xfp $img -C $EXTRACTDIR
 
 echo "=== uploading remaster script on arm server `date`"
 #scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
-echo === setting up resolve.conf in chroot  `date`
+echo "=== setting up resolve.conf in chroot  `date`"
 #ssh ${SERVER} cp /etc/resolv.conf ubuntu-touch-remaster/extract/etc/
 
 echo "=== Binding /proc, /sys and /dev"
