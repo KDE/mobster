@@ -5,19 +5,31 @@
 
 set -ex
 
+__dir__=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 SERVER=root@212.47.241.146
 OUTPUTIMG=vivid-preinstalled-touch-armhf.tar.gz
+PROPOSEDDIR=$__dir__/remaster-proposed/daily-preinstalled/
+SYNCDIR=$PROPOSEDDIR/tmp
+IMGDIR=$PROPOSEDDIR/`date +%Y%m%d.%H%M%S`
+
+rm -rf $SYNCDIR
+mkdir -p $SYNCDIR
+
+rm -rf $IMGDIR
+mkdir -p $IMGDIR
 
 echo "=== Running remote server harness  `date`"
 scp remote-remaster $SERVER:/root
 scp chroot-remaster $SERVER:/root
 ssh $SERVER bash /root/remote-remaster
 
-echo "=== downloading tar  `date`"
-DATE=`date +%Y%m%d.%H%M%S`
-IMGDIR=remaster-proposed/daily-preinstalled/${DATE}
-mkdir -p $IMGDIR
-scp $SERVER:/root/output/$OUTPUTIMG $IMGDIR
+echo "=== syncing tar  `date`"
+# Very simple rsync without compression (slows down things).
+# Simply sync the file to a syncdir. Then copy the file from there to the
+# target. This ensures that the target directory is kept pristine but we still
+# can make use of partial syncing via rsync.
+rsync -avP --stats $SERVER:/root/output/$OUTPUTIMG $SYNCDIR
+cp $SYNCDIR/$OUTPUTIMG $IMGDIR
 
 echo "=== running shasum  `date`"
 cd $IMGDIR

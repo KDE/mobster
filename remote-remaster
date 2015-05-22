@@ -7,9 +7,10 @@
 
 set -ex
 
-CACHEDIR=/root/cache
-OUTDIR=/root/output
-EXTRACTDIR=/root/ubuntu-touch-remaster/extract
+__dir__=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+CACHEDIR=$__dir__/cache
+OUTDIR=$__dir__/output
+EXTRACTDIR=$__dir__/ubuntu-touch-remaster/extract
 
 [[ -d "$CACHEDIR" ]] || mkdir -p $CACHEDIR
 
@@ -47,6 +48,7 @@ echo "=== Un-Binding /proc, /sys and /dev"
 #ssh ${SERVER} umount ubuntu-touch-remaster/extract/proc
 
 echo "=== making a new tar - this takes an age  `date`"
-#ssh ${SERVER} "apt-get install pigz"
-#ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar cf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
-tar -cpv -C $EXTRACTDIR . | gzip -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
+# gzip rsyncable as the gz is being extracted and meddled with as part of the
+# image import, so the gzip we output here will not be the one used for
+# devices anyway. might as well improve for transfer here. all things considered
+tar -cpv -C $EXTRACTDIR . | gzip --rsyncable -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
