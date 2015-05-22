@@ -25,7 +25,7 @@ function chroot_teardown {
   echo "=== removing resolve.conf in chroot  `date`"
   rm $EXTRACTDIR/etc/resolv.conf
 
-  trap - SIGHUP SIGINT SIGTERM
+  trap - EXIT SIGHUP SIGINT SIGTERM
   unset REMASTER_CHROOT_SETUP
 }
 
@@ -35,7 +35,7 @@ function chroot_setup {
   fi
 
   export REMASTER_CHROOT_SETUP=1
-  trap chroot_teardown SIGHUP SIGINT SIGTERM
+  trap chroot_teardown EXIT SIGHUP SIGINT SIGTERM
 
   echo "=== setting up resolve.conf in chroot  `date`"
   cp /etc/resolv.conf $EXTRACTDIR/etc/
