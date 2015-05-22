@@ -10,6 +10,7 @@ OUTPUTIMG=vivid-preinstalled-touch-armhf.tar.gz
 
 echo "=== Running remote server harness  `date`"
 scp remote-remaster $SERVER:/root
+scp chroot-remaster $SERVER:/root
 ssh $SERVER bash /root/remote-remaster
 
 echo "=== downloading tar  `date`"
