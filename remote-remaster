@@ -51,6 +51,4 @@ echo "=== Un-Binding /proc, /sys and /dev"
 echo "=== making a new tar - this takes an age  `date`"
 #ssh ${SERVER} "apt-get install pigz"
 #ssh ${SERVER} "cd /root/ubuntu-touch-remaster/extract; tar cf - * | pigz -p 4 > vivid-preinstalled-touch-armhf.tar.gz"
-pushd /root/ubuntu-touch-remaster/extract
-tar -cvf . | gzip -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
-popd
+tar -pcvf . -C $EXTRACTDIR | gzip -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
