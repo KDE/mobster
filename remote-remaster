@@ -7,14 +7,21 @@
 
 set -ex
 
+CACHEDIR=/root/cache
 OUTDIR=/root/output
+
+mkdir -p $CACHEDIR
 
 rm -rf $OUTDIR
 mkdir -p $OUTDIR
 
+echo "=== syncing reference image  `date`"
+pushd $CACHEDIR
 cd $OUTDIR
 zsync http://cdimage.ubuntu.com/ubuntu-touch/vivid/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
+img=$CACHEDIR/vivid-preinstalled-touch-armhf.tar.gz
 exit 0
+popd
 
 echo "=== extracting on arm server - this will take some time `date`"
 # rm -rf /root/ubuntu-touch-remaster/extract
