@@ -9,11 +9,15 @@ set -ex
 
 CACHEDIR=/root/cache
 OUTDIR=/root/output
+EXTRACTDIR=/root/ubuntu-touch-remaster/extract
 
 mkdir -p $CACHEDIR
 
 rm -rf $OUTDIR
 mkdir -p $OUTDIR
+
+rm -rf $EXTRACTDIR
+mkdir -p $EXTRACTDIR
 
 echo "=== syncing reference image  `date`"
 pushd $CACHEDIR
@@ -23,10 +27,8 @@ img=$CACHEDIR/vivid-preinstalled-touch-armhf.tar.gz
 exit 0
 popd
 
-echo "=== extracting on arm server - this will take some time `date`"
-# rm -rf /root/ubuntu-touch-remaster/extract
-# mkdir -p /root/ubuntu-touch-remaster/extract
-# tar xf ubuntu-touch-remaster/vivid-preinstalled-touch-armhf.tar.gz -C ubuntu-touch-remaster/extract
+echo "=== extracting reference image  `date`"
+tar -xfp $img -C $EXTRACTDIR
 
 echo "=== uploading remaster script on arm server `date`"
 #scp ../chroot-remaster ${SERVER}:ubuntu-touch-remaster/extract/
