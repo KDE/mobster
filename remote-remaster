@@ -11,7 +11,7 @@ CACHEDIR=/root/cache
 OUTDIR=/root/output
 EXTRACTDIR=/root/ubuntu-touch-remaster/extract
 
-mkdir -p $CACHEDIR
+[[ -d "$CACHEDIR" ]] || mkdir -p $CACHEDIR
 
 rm -rf $OUTDIR
 mkdir -p $OUTDIR
