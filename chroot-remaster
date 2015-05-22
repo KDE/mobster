@@ -36,7 +36,6 @@ mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 mkdir /userdata
 touch /userdata/.writable_image
 touch /userdata/.adb_onlock
-service ssh start
 setprop persist.service.ssh true
 
 echo -n "manual
