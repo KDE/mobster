@@ -130,11 +130,11 @@ apt-get install -y libhybris
 apt-get install -y libhybris-common1
 apt-get install -y libhybris-test
 apt-get install -y libhybris-utils
-apt-get install -y konsole
 apt-get install -y libandroid-properties1
 apt-get install -y libhardware2
 apt-get install -y libmedia1
 apt-get install -y \
+  konsole \
   kwin \
   plasma-phone-components \
   qtwayland5 \
