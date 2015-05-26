@@ -126,7 +126,7 @@ apt-get install -y \
   libhybris \
   libhybris-common1 \
   libhybris-test \
-  libhybris-utils \
+  libhybris-utils
 apt-get install -y libandroid-properties1
 apt-get install -y libhardware2
 apt-get install -y libmedia1
