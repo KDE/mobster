@@ -52,90 +52,102 @@ apt-get remove -y \
   unity-settings-daemon \
   unity-system-compositor \
   unity8 \
+  desktop-file-utils \
+  ibus \
+  nano \
+  obex-data-server \
+  openbox \
+  qtmir-android \
+  telephony-service \
+  url-dispatcher \
+  whoopsie \
+  whoopsie-preferences \
+  libaspell15 \
+  libcanberra-gtk3-0 \
+  libcheese-gtk23 \
+  libcheese7 \
+  libclutter-1.0-0 \
+  libclutter-gst-2.0-0 \
+  libclutter-gtk-1.0-0 \
+  libcogl-pango20 \
+  libcogl-path20 \
+  libcogl20 \
+  libcontent-hub0 \
+  libcrack2 \
+  libenchant1c2a \
+  libfcitx-config4 \
+  libfcitx-gclient0 \
+  libfcitx-utils0 \
+  libgnome-bluetooth11 \
+  libgnome-desktop-3-10 \
+  libgnome-menu-3-0 \
+  libgnomekbd8 \
+  libgtop2-10 \
+  libharfbuzz-icu0 \
+  libibus-1.0-5 \
+  libjavascriptcoregtk-3.0-0 \
+  liblightdm-gobject-1-0 \
+  libnm-gtk0 \
+  libpwquality-common \
+  libpwquality1 \
+  libubuntu-app-launch2 \
+  libubuntu-application-api2 \
+  libubuntu-download-manager-client0 \
+  libubuntu-download-manager-common0 \
+  libubuntu-location-service2 \
+  libubuntu-upload-manager-common0 \
+  libubuntuoneauth-2.0-0 \
+  libunity-action-qt1 \
+  libunity-api0 \
+  libunity-control-center1 \
+  libunity-protocol-private0 \
+  libunity-scopes3 \
+  libunity-settings-daemon1 \
+  libunity9 \
+  libwacom2 \
+  libwebkitgtk-3.0-0 \
+  libwebp5 \
+  libxklavier16 \
+  lightdm \
   myspell-ca myspell-es myspell-it myspell-pl myspell-pt-br myspell-pt-pt \
   language-pack-touch-ast language-pack-touch-bg language-pack-touch-bs language-pack-touch-ca language-pack-touch-cs language-pack-touch-da language-pack-touch-de language-pack-touch-el language-pack-touch-en language-pack-touch-es language-pack-touch-eu language-pack-touch-fi language-pack-touch-fr language-pack-touch-gd language-pack-touch-gl language-pack-touch-he language-pack-touch-hu language-pack-touch-id language-pack-touch-it language-pack-touch-ja language-pack-touch-ko language-pack-touch-lt language-pack-touch-lv language-pack-touch-ms language-pack-touch-nb language-pack-touch-nl language-pack-touch-oc language-pack-touch-pl language-pack-touch-pt language-pack-touch-ro language-pack-touch-ru language-pack-touch-sk language-pack-touch-sl language-pack-touch-sr language-pack-touch-sv language-pack-touch-tr language-pack-touch-ug language-pack-touch-uk language-pack-touch-zh-hans language-pack-touch-zh-hant
-  # desktop-file-utils \
-  # ibus \
-  # nano \
-  # obex-data-server \
-  # openbox \
-  # qtmir-android \
-  # telephony-service \
-  # url-dispatcher \
-  # whoopsie \
-  # whoopsie-preferences \
+# Possibly relevant. At least relevant enough to not be removed for the time
+# being.
 #   apg \
 #   system-image-common \
 #   system-image-dbus \
-#   libaspell15 \
-#   libcanberra-gtk3-0 \
-#   libcheese-gtk23 \
-#   libcheese7 \
-#   libclutter-1.0-0 \
-#   libclutter-gst-2.0-0 \
-#   libclutter-gtk-1.0-0 \
-#   libcogl-pango20 \
-#   libcogl-path20 \
-#   libcogl20 \
-#   libcontent-hub0 \
-#   libcrack2 \
-#   libenchant1c2a \
-#   libfcitx-config4 \
-#   libfcitx-gclient0 \
-#   libfcitx-utils0 \
-#   libgnome-bluetooth11 \
-#   libgnome-desktop-3-10 \
-#   libgnome-menu-3-0 \
-#   libgnomekbd8 \
-#   libgtop2-10 \
-#   libharfbuzz-icu0 \
-#   libibus-1.0-5 \
-#   libjavascriptcoregtk-3.0-0 \
-#   liblightdm-gobject-1-0 \
-#   libnm-gtk0 \
-#   libpwquality-common \
-#   libpwquality1 \
-#   libubuntu-app-launch2 \
-#   libubuntu-application-api2 \
-#   libubuntu-download-manager-client0 \
-#   libubuntu-download-manager-common0 \
-#   libubuntu-location-service2 \
-#   libubuntu-upload-manager-common0 \
-#   libubuntuoneauth-2.0-0 \
-#   libunity-action-qt1 \
-#   libunity-api0 \
-#   libunity-control-center1 \
-#   libunity-protocol-private0 \
-#   libunity-scopes3 \
-#   libunity-settings-daemon1 \
-#   libunity9 \
-#   libwacom2 \
-#   libwebkitgtk-3.0-0 \
-#   libwebp5 \
-#   libxklavier16 \
-#   lightdm \
 
-# apt-get -y clean
-# apt-get -y autoremove
-# apt-get -yf install
-# apt-get -y install software-properties-common
-# apt-add-repository -y ppa:plasma-phone/ppa
-# apt update
-# apt-get install -y libhybris
-# apt-get install -y libhybris-common1
-# apt-get install -y libhybris-test
-# apt-get install -y libhybris-utils
-# apt-get install -y libandroid-properties1
-# apt-get install -y libhardware2
-# apt-get install -y libmedia1
-# # apt-get install -y \
-# #   konsole \
-# #   kwin \
-# #   plasma-phone-components \
-# #   qtwayland5 \
-# #   xwayland
-#
-# apt-get -y clean
+apt-get -y clean
+apt-get -y autoremove
+apt-get -yf install
+apt-get -y install software-properties-common
+apt-add-repository -y ppa:plasma-phone/ppa
+apt update
+# Hybris
+apt-get install -y \
+  libhybris \
+  libhybris-common1 \
+  libhybris-test \
+  libhybris-utils \
+apt-get install -y libandroid-properties1
+apt-get install -y libhardware2
+apt-get install -y libmedia1
+# Foundation wiring we will need to work with ubuntu-touch tooling.
+# This might also need parts of ubuntu-touch-session
+apt-get install -y \
+  ubuntu-touch-generic-initrd \
+  ubuntu-touch-customization-hooks \
+  system-image-common \
+  system-image-dbus
+# KF5 Stack
+apt-get install -y \
+  konsole \
+  kwin \
+  plasma-phone-components \
+  qtwayland5 \
+  xwayland
+
+apt-get -y clean
 
 # Cleanup
 rm -f /etc/apt/apt.conf.d/debug
