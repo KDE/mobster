@@ -1,9 +1,13 @@
 #!/bin/bash
+
 set -ex
 
 echo 'Debug::pkgProblemResolver "true";' >> /etc/apt/apt.conf.d/debug
 mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
 ln -s /bin/true /usr/sbin/invoke-rc.d
+
+# Back up extrausers, see us using it towards the end.
+cp /usr/share/pam-configs/touch-extrausers /tmp/
 
 apt-get remove -y \
   account-plugin-facebook \
@@ -159,6 +163,13 @@ apt-get -y autoremove
 # Cleanup
 rm -f /etc/apt/apt.conf.d/debug
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
+
+# Add touch-extrausers. This is something done through ubuntu-touch-session but
+# apparently this is required to actually enable NSS extrausers to work, which
+# is a requirement for successful flashing as otherwise there is no phablet
+# user.
+mv /tmp/touch-extrausers /usr/share/pam-configs/touch-extrausers
+pam-auth-update --package touch-extrausers
 
 # mkdir /userdata
 # touch /userdata/.writable_image
