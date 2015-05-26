@@ -117,8 +117,6 @@ apt-get remove -y \
 #   system-image-common \
 #   system-image-dbus \
 
-apt-get -y clean
-apt-get -y autoremove
 apt-get -yf install
 apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
@@ -149,6 +147,7 @@ apt-get install -y \
   xwayland
 
 apt-get -y clean
+apt-get -y autoremove
 
 # Cleanup
 rm -f /etc/apt/apt.conf.d/debug
