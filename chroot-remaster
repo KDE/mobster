@@ -133,7 +133,6 @@ apt-get install -y libhybris-utils
 apt-get install -y konsole
 apt-get install -y libandroid-properties1
 apt-get install -y libhardware2
-apt-get install -y libkf5screen6
 apt-get install -y libmedia1
 apt-get install -y \
   kwin \
