@@ -15,6 +15,11 @@ apt-get purge -y \
   suru-icon-theme \
   gnome-bluetooth \
   gnome-menus \
+  indicator-bluetooth \
+  indicator-keyboard \
+  indicator-location \
+  indicator-network \
+  indicator-transfer \
   ubuntu-application-api2-test \
   ubuntu-application-api2-touch \
   ubuntu-download-manager \
@@ -41,11 +46,6 @@ apt-get purge -y \
   language-pack-touch-ast language-pack-touch-bg language-pack-touch-bs language-pack-touch-ca language-pack-touch-cs language-pack-touch-da language-pack-touch-de language-pack-touch-el language-pack-touch-en language-pack-touch-es language-pack-touch-eu language-pack-touch-fi language-pack-touch-fr language-pack-touch-gd language-pack-touch-gl language-pack-touch-he language-pack-touch-hu language-pack-touch-id language-pack-touch-it language-pack-touch-ja language-pack-touch-ko language-pack-touch-lt language-pack-touch-lv language-pack-touch-ms language-pack-touch-nb language-pack-touch-nl language-pack-touch-oc language-pack-touch-pl language-pack-touch-pt language-pack-touch-ro language-pack-touch-ru language-pack-touch-sk language-pack-touch-sl language-pack-touch-sr language-pack-touch-sv language-pack-touch-tr language-pack-touch-ug language-pack-touch-uk language-pack-touch-zh-hans language-pack-touch-zh-hant
   # desktop-file-utils \
   # ibus \
-  # indicator-bluetooth \
-  # indicator-keyboard \
-  # indicator-location \
-  # indicator-network \
-  # indicator-transfer \
   # nano \
   # obex-data-server \
   # openbox \
