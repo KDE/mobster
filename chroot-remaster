@@ -138,7 +138,8 @@ apt-get install -y \
   ubuntu-touch-generic-initrd \
   ubuntu-touch-customization-hooks \
   system-image-common \
-  system-image-dbus
+  system-image-dbus \
+  apparmor
 # KF5 Stack
 apt-get install -y \
   konsole \
