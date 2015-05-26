@@ -5,7 +5,7 @@ echo 'Debug::pkgProblemResolver "true";' >> /etc/apt/apt.conf.d/debug
 mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
 ln -s /bin/true /usr/sbin/invoke-rc.d
 
-apt-get purge -y \
+apt-get remove -y \
   account-plugin-facebook \
   account-plugin-flickr \
   account-plugin-google \
