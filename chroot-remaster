@@ -138,6 +138,13 @@ apt-get install -y \
   system-image-common \
   system-image-dbus \
   apparmor
+# More Foundation. In particular everything here is related to enabling
+# the phablet user which is an extrausers user.
+apt-get install -y \
+  lxc-android-config \
+  libnss-extrausers \
+  libpam-modules \
+  libpam-modules-bin
 # KF5 Stack
 apt-get install -y \
   konsole \
