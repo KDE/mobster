@@ -17,7 +17,7 @@ apt update
 # runtime dependencies as they include unity8. The package is however also
 # apparently very important to the correct function of the image due to !unity
 # bits.
-apt-get install -y \
+apt-get install --force-yes -y \
   ubuntu-touch-session=0.108+15.04.20150407-0ubuntu1+kubuntu1
 apt-mark hold ubuntu-touch-session
 
