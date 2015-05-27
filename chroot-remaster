@@ -163,7 +163,8 @@ apt-get install -y \
   kwin \
   plasma-phone-components \
   qtwayland5 \
-  xwayland
+  xwayland \
+  simplelogin
 
 apt-get -y clean
 
