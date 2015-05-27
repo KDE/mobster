@@ -141,6 +141,7 @@ apt-get install -y \
   ubuntu-touch-customization-hooks \
   system-image-common \
   system-image-dbus \
+  system-image-cli \
   apparmor
 # More Foundation. In particular everything here is related to enabling
 # the phablet user which is an extrausers user.
