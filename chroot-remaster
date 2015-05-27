@@ -95,6 +95,7 @@ apt-get install -y \
 # Foundation wiring we will need to work with ubuntu-touch tooling.
 # This might also need parts of ubuntu-touch-session
 apt-get install -y \
+  initramfs-tools-ubuntu-touch \
   ubuntu-touch-generic-initrd \
   ubuntu-touch-customization-hooks \
   system-image-common \
