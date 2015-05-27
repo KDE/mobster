@@ -72,52 +72,6 @@ apt-get remove -y \
   url-dispatcher \
   whoopsie \
   whoopsie-preferences \
-  libaspell15 \
-  libcanberra-gtk3-0 \
-  libcheese-gtk23 \
-  libcheese7 \
-  libclutter-1.0-0 \
-  libclutter-gst-2.0-0 \
-  libclutter-gtk-1.0-0 \
-  libcogl-pango20 \
-  libcogl-path20 \
-  libcogl20 \
-  libcontent-hub0 \
-  libcrack2 \
-  libenchant1c2a \
-  libfcitx-config4 \
-  libfcitx-gclient0 \
-  libfcitx-utils0 \
-  libgnome-bluetooth11 \
-  libgnome-desktop-3-10 \
-  libgnome-menu-3-0 \
-  libgnomekbd8 \
-  libgtop2-10 \
-  libharfbuzz-icu0 \
-  libibus-1.0-5 \
-  libjavascriptcoregtk-3.0-0 \
-  liblightdm-gobject-1-0 \
-  libnm-gtk0 \
-  libpwquality-common \
-  libpwquality1 \
-  libubuntu-app-launch2 \
-  libubuntu-application-api2 \
-  libubuntu-download-manager-client0 \
-  libubuntu-download-manager-common0 \
-  libubuntu-location-service2 \
-  libubuntu-upload-manager-common0 \
-  libubuntuoneauth-2.0-0 \
-  libunity-action-qt1 \
-  libunity-api0 \
-  libunity-control-center1 \
-  libunity-protocol-private0 \
-  libunity-scopes3 \
-  libunity-settings-daemon1 \
-  libunity9 \
-  libwacom2 \
-  libwebkitgtk-3.0-0 \
-  libwebp5 \
-  libxklavier16 \
   lightdm \
   myspell-ca myspell-es myspell-it myspell-pl myspell-pt-br myspell-pt-pt \
   language-pack-touch-ast language-pack-touch-bg language-pack-touch-bs language-pack-touch-ca language-pack-touch-cs language-pack-touch-da language-pack-touch-de language-pack-touch-el language-pack-touch-en language-pack-touch-es language-pack-touch-eu language-pack-touch-fi language-pack-touch-fr language-pack-touch-gd language-pack-touch-gl language-pack-touch-he language-pack-touch-hu language-pack-touch-id language-pack-touch-it language-pack-touch-ja language-pack-touch-ko language-pack-touch-lt language-pack-touch-lv language-pack-touch-ms language-pack-touch-nb language-pack-touch-nl language-pack-touch-oc language-pack-touch-pl language-pack-touch-pt language-pack-touch-ro language-pack-touch-ru language-pack-touch-sk language-pack-touch-sl language-pack-touch-sr language-pack-touch-sv language-pack-touch-tr language-pack-touch-ug language-pack-touch-uk language-pack-touch-zh-hans language-pack-touch-zh-hant
@@ -127,8 +81,6 @@ apt-get remove -y \
 #   system-image-common \
 #   system-image-dbus \
 
-# FIXME: the remove command should not remove libs but apps/services and
-#   autoremove the dangling libs.
 # FIXME: powerd might be relevant but depends on ubuntu-apps-api2
 # FIXME: there are plenty of relevant packages danling now, this needs
 #   a full review of dangling packages and removal if not wanted or holding
