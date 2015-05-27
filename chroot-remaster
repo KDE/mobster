@@ -3,6 +3,9 @@
 set -ex
 
 echo 'Debug::pkgProblemResolver "true";' >> /etc/apt/apt.conf.d/debug
+echo 'Acquire::http { Proxy "http://localhost:3142"; };' >> /etc/apt/apt.conf.d/cacher
+apt-get update
+
 mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
 ln -s /bin/true /usr/sbin/invoke-rc.d
 
@@ -121,7 +124,7 @@ apt-get install -y \
 apt-get -y clean
 
 # Cleanup
-rm -f /etc/apt/apt.conf.d/debug
+rm -f /etc/apt/apt.conf.d/debug /etc/apt/apt.conf.d/cacher
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 
 # mkdir /userdata
