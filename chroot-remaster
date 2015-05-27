@@ -127,6 +127,13 @@ apt-get remove -y \
 #   system-image-common \
 #   system-image-dbus \
 
+# FIXME: the remove command should not remove libs but apps/services and
+#   autoremove the dangling libs.
+# FIXME: powerd might be relevant but depends on ubuntu-apps-api2
+# FIXME: there are plenty of relevant packages danling now, this needs
+#   a full review of dangling packages and removal if not wanted or holding
+#   via some meta if wanted.
+
 apt-get -yf install
 # Hybris
 apt-get install -y \
