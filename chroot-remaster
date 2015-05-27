@@ -29,8 +29,6 @@ apt-get remove -y \
   adwaita-icon-theme \
   humanity-icon-theme \
   suru-icon-theme \
-  gnome-bluetooth \
-  gnome-menus \
   indicator-bluetooth \
   indicator-keyboard \
   indicator-location \
@@ -66,11 +64,9 @@ apt-get remove -y \
   unity-settings-daemon \
   unity-system-compositor \
   unity8 \
-  desktop-file-utils \
   ibus \
   nano \
   obex-data-server \
-  openbox \
   qtmir-android \
   telephony-service \
   url-dispatcher \
