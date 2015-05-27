@@ -134,9 +134,6 @@ apt-get install -y \
   libhybris-common1 \
   libhybris-test \
   libhybris-utils
-apt-get install -y libandroid-properties1
-apt-get install -y libhardware2
-apt-get install -y libmedia1
 # Foundation wiring we will need to work with ubuntu-touch tooling.
 # This might also need parts of ubuntu-touch-session
 apt-get install -y \
