@@ -6,8 +6,20 @@ echo 'Debug::pkgProblemResolver "true";' >> /etc/apt/apt.conf.d/debug
 mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
 ln -s /bin/true /usr/sbin/invoke-rc.d
 
-# Back up extrausers, see us using it towards the end.
-cp /usr/share/pam-configs/touch-extrausers /tmp/
+# Set up phone PPA.
+# FIXME: this presently is done before removal although it would be more
+#   reliable after, because we need it to supply our mangled session.
+apt-get -y install software-properties-common
+apt-add-repository -y ppa:plasma-phone/ppa
+apt update
+
+# Hold ubuntu-touch-session at a managled version. We specifically break
+# runtime dependencies as they include unity8. The package is however also
+# apparently very important to the correct function of the image due to !unity
+# bits.
+apt-get install -y \
+  ubuntu-touch-session=0.108+15.04.20150407-0ubuntu1+kubuntu1
+apt-mark hold ubuntu-touch-session
 
 apt-get remove -y \
   account-plugin-facebook \
@@ -45,8 +57,6 @@ apt-get remove -y \
   ubuntu-push-client \
   ubuntu-system-settings \
   ubuntu-system-settings-online-accounts \
-  ubuntu-touch-customization-hooks \
-  ubuntu-touch-session \
   ubuntu-upload-manager \
   ubuntuone-client-data \
   unity-asset-pool \
@@ -122,9 +132,6 @@ apt-get remove -y \
 #   system-image-dbus \
 
 apt-get -yf install
-apt-get -y install software-properties-common
-apt-add-repository -y ppa:plasma-phone/ppa
-apt update
 # Hybris
 apt-get install -y \
   libhybris \
@@ -162,13 +169,6 @@ apt-get -y clean
 # Cleanup
 rm -f /etc/apt/apt.conf.d/debug
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
-
-# Add touch-extrausers. This is something done through ubuntu-touch-session but
-# apparently this is required to actually enable NSS extrausers to work, which
-# is a requirement for successful flashing as otherwise there is no phablet
-# user.
-mv /tmp/touch-extrausers /usr/share/pam-configs/touch-extrausers
-pam-auth-update --package touch-extrausers
 
 # mkdir /userdata
 # touch /userdata/.writable_image
