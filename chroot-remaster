@@ -2,6 +2,7 @@
 
 set -ex
 
+echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/unsafe-io
 echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
 echo 'Acquire::http { Proxy "http://localhost:3142"; };' > /etc/apt/apt.conf.d/cacher
 apt-get update
@@ -125,7 +126,9 @@ apt-get install -y \
 apt-get -y clean
 
 # Cleanup
-rm -f /etc/apt/apt.conf.d/debug /etc/apt/apt.conf.d/cacher
+rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
+      /etc/apt/apt.conf.d/debug \
+      /etc/apt/apt.conf.d/cacher
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 
 # Rename the simplelogin job to lightdm.
