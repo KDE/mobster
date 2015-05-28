@@ -2,8 +2,8 @@
 
 set -ex
 
-echo 'Debug::pkgProblemResolver "true";' >> /etc/apt/apt.conf.d/debug
-echo 'Acquire::http { Proxy "http://localhost:3142"; };' >> /etc/apt/apt.conf.d/cacher
+echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
+echo 'Acquire::http { Proxy "http://localhost:3142"; };' > /etc/apt/apt.conf.d/cacher
 apt-get update
 
 mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
