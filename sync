@@ -1,2 +1,2 @@
-scp ubuntu@kubuntu.plasma-mobile.org:/home/ubuntu/kubuntu/remaster/* .
+scp ubuntu@kubuntu.plasma-mobile.org:kubuntu/mobster/* .
 rm *~

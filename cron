@@ -6,10 +6,10 @@ DATE=`date --rfc-3339='seconds' | sed "s, ,--," | sed s,\+.*,,`
 #echo == new custom tar
 #cd /home/ubuntu/kubuntu/custom-image; ./kubuntu-mobile-extra-tar.sh
 echo == running remaster-ubuntu-touch to download todays image
-/home/ubuntu/kubuntu/remaster/remaster-ubuntu-touch
+/home/ubuntu/kubuntu/mobster/remaster-ubuntu-touch
 echo == update the system-image server
 cd ~/kubuntu/system-image
 ./bin/import-images -vvvv
 cd www
-ln -s ../../remaster/15020612107_4561b13fff_k.jpg
-ln -s ../../remaster/index.html
+ln -s ~/kubuntu/mobster/15020612107_4561b13fff_k.jpg
+ln -s ~/kubuntu/mobster/index.html
