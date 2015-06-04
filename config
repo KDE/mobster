@@ -16,7 +16,7 @@ type = auto
 versionbase = 1
 fullcount = 1
 files = ubuntu, device, keyring, version
-file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/mobster/remaster/daily-preinstalled/;vivid;import=any
+file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster/daily-preinstalled/;vivid;import=any
 file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
 file_keyring = keyring;archive-master
 file_version = version
@@ -26,7 +26,7 @@ type = auto
 versionbase = 1
 fullcount = 1
 files = ubuntu, device, keyring, version
-file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/mobster/remaster-proposed/daily-preinstalled/;vivid;import=any
+file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster-proposed/daily-preinstalled/;vivid;import=any
 file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
 file_keyring = keyring;archive-master
 file_version = version

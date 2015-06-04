@@ -1,10 +1,10 @@
 # you have tested a proposed image and want to move it to final
 # ./proposed-is-good 20150330.150615
 
-cd ~/kubuntu/mobster/remaster/daily-preinstalled
-ln -s ~/kubuntu/mobster/remaster-proposed/daily-preinstalled/$1/
+cd ~/kubuntu/remaster/daily-preinstalled
+ln -s ~/kubuntu/remaster-proposed/daily-preinstalled/$1/
 
 cd ~/kubuntu/system-image
 ./bin/import-images -vvvv
-ln -s ~/kubuntu/mobster/remaster/15020612107_4561b13fff_k.jpg
-ln -s ~/kubuntu/mobster/remaster/index.html
+ln -s ~/kubuntu/mobster/15020612107_4561b13fff_k.jpg
+ln -s ~/kubuntu/mobster/index.html

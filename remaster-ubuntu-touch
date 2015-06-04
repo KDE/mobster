@@ -8,7 +8,7 @@ set -ex
 __dir__=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 SERVER=root@212.47.241.146
 OUTPUTIMG=vivid-preinstalled-touch-armhf.tar.gz
-PROPOSEDDIR=$__dir__/remaster-proposed/daily-preinstalled/
+PROPOSEDDIR=~/kubuntu/remaster-proposed/daily-preinstalled/
 SYNCDIR=$PROPOSEDDIR/tmp
 IMGDIR=$PROPOSEDDIR/`date +%Y%m%d.%H%M%S`
 
