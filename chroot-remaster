@@ -121,7 +121,8 @@ apt-get install -y \
   plasma-phone-components \
   qtwayland5 \
   xwayland \
-  simplelogin
+  simplelogin \
+  qtdeclarative5-private-dev
 
 apt-get -y clean
 

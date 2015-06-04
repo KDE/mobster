@@ -3,3 +3,8 @@
 
 cd /home/ubuntu/kubuntu/remaster/remaster/daily-preinstalled
 ln -s ../../remaster-proposed/daily-preinstalled/$1/
+
+cd ~/kubuntu/system-image
+./bin/import-images -vvvv
+ln -s ../remaster/15020612107_4561b13fff_k.jpg
+ln -s ../remaster/index.html
