@@ -13,10 +13,9 @@ ln -s /bin/true /usr/sbin/invoke-rc.d
 # Set up phone PPA.
 # FIXME: this presently is done before removal although it would be more
 #   reliable after, because we need it to supply our mangled session.
-echo "deb http://ppa.launchpad.net/kubuntu-ci/unstable/ubuntu vivid main" > /etc/apt/sources.list.d/kubuntu-ci-ubuntu-unstable-vivid.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57E86615
 apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
+apt-add-repository -y ppa:plasma-phone/ci
 apt-get update
 
 # Hold ubuntu-touch-session at a managled version. We specifically break
