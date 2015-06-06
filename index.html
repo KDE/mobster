@@ -20,6 +20,18 @@ body {
      background-color:#ffffff;
      margin: 0px;
      padding: 20px;
+     animation-name: dropHeader;
+     animation-iteration-count: 1;
+     animation-timing-function: ease-in;
+     animation-duration: 0.5s;
+}
+@keyframes dropHeader {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 </style>
 
