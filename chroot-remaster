@@ -5,6 +5,7 @@ set -ex
 echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/unsafe-io
 echo 'Debug::pkgProblemResolver "true";' > /etc/apt/apt.conf.d/debug
 echo 'Acquire::http { Proxy "http://localhost:3142"; };' > /etc/apt/apt.conf.d/cacher
+echo 'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/unsigned
 apt-get update
 
 mv /usr/sbin/invoke-rc.d /usr/sbin/invoke-rc.d.bak
@@ -16,6 +17,7 @@ ln -s /bin/true /usr/sbin/invoke-rc.d
 apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
 apt-add-repository -y ppa:plasma-phone/ci
+echo deb http://kubuntu.plasma-mobile.org/plasma-workspace/ ./ > /etc/apt/sources.list.d/plasma-workspace.list
 apt-get update
 
 # Hold ubuntu-touch-session at a managled version. We specifically break
