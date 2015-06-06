@@ -125,9 +125,14 @@ apt-get install -y \
   qtwayland5 \
   xwayland \
   simplelogin \
-  qtdeclarative5-private-dev
+  qtdeclarative5-private-dev \
+  qml-module-org-kde-*
 
 apt-get -y clean
+
+# plasma framework looking in the wrong place, this should go away when
+# we work out why, maybe just an old version of plasma-framework
+cp /usr/lib/arm-linux-gnueabihf/plugins/plasma/applets/plasma_* /usr/lib/arm-linux-gnueabihf/qt5/plugins/
 
 # Cleanup
 rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
