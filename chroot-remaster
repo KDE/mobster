@@ -121,6 +121,7 @@ apt-get install -y \
 apt-get install -y \
   konsole \
   kwin \
+  kwin-hwcompositor-backend \
   plasma-phone-components \
   qtwayland5 \
   xwayland \
