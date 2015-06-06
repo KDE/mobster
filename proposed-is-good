@@ -6,5 +6,6 @@ ln -s ~/kubuntu/remaster-proposed/daily-preinstalled/$1/
 
 cd ~/kubuntu/system-image
 ./bin/import-images -vvvv
+cd www
 ln -s ~/kubuntu/mobster/15020612107_4561b13fff_k.jpg
 ln -s ~/kubuntu/mobster/index.html
