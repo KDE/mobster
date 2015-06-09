@@ -39,7 +39,7 @@ function chroot_setup {
   export REMASTER_CHROOT_SETUP=1
   trap chroot_teardown EXIT SIGHUP SIGINT SIGTERM
 
-  echo "=== setting up resolve.conf in chroot  `date`"
+  echo "=== setting up resolv.conf in chroot  `date`"
   cp /etc/resolv.conf $EXTRACTDIR/etc/
 
   echo "=== Binding /proc, /sys and /dev"
