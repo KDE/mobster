@@ -128,7 +128,7 @@ apt-get install -y \
   simplelogin \
   qtdeclarative5-private-dev \
   qml-module-org-kde-* \
-  dev-tools \
+  plasma-phone-dev-setup \
   plasma-phone-settings
 
 apt-get -y clean
