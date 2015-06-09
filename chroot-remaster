@@ -115,7 +115,8 @@ apt-get install -y \
   lxc-android-config \
   libnss-extrausers \
   libpam-modules \
-  libpam-modules-bin
+  libpam-modules-bin \
+  vim
 # KF5 Stack
 apt-get install -y \
   konsole \
