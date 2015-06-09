@@ -127,7 +127,8 @@ apt-get install -y \
   xwayland \
   simplelogin \
   qtdeclarative5-private-dev \
-  qml-module-org-kde-*
+  qml-module-org-kde-* \
+  dev-tools
 
 apt-get -y clean
 
