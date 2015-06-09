@@ -16,7 +16,7 @@ ln -s /bin/true /usr/sbin/invoke-rc.d
 #   reliable after, because we need it to supply our mangled session.
 apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
-apt-add-repository -y ppa:plasma-phone/ci
+apt-add-repository -y ppa:plasma-phone/ci-2015-06-05
 apt-get update
 
 # Hold ubuntu-touch-session at a managled version. We specifically break
