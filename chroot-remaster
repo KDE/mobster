@@ -143,8 +143,6 @@ rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
       /etc/apt/apt.conf.d/cacher
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 
-dd bs=1M count=2000 if=/dev/zero of=/SPACE-FILE
-
 # Rename the simplelogin job to lightdm.
 # A lot of the ubuntu-touch jobs do explicitly "start/stop on lightdm" which
 # means they will not work without the job.
@@ -152,10 +150,5 @@ dd bs=1M count=2000 if=/dev/zero of=/SPACE-FILE
 # pretend that simplelogin is lightdm. For the time being anyway.
 mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 
-# mkdir /userdata
-# touch /userdata/.writable_image
-# touch /userdata/.adb_onlock
-# setprop persist.service.ssh true || true
-#
-# echo -n "manual
-# exec /usr/sbin/sshd -D -o PasswordAuthentication=yes" > ssh.override
+# Make this chroot larger so we end up with a larger / on the final phone install
+dd bs=1M count=2000 if=/dev/zero of=/SPACE-FILE
