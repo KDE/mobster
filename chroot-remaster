@@ -143,6 +143,8 @@ rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
       /etc/apt/apt.conf.d/cacher
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 
+dd bs=1M count=2000 if=/dev/zero of=/SPACE-FILE
+
 # Rename the simplelogin job to lightdm.
 # A lot of the ubuntu-touch jobs do explicitly "start/stop on lightdm" which
 # means they will not work without the job.
