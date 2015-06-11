@@ -133,7 +133,8 @@ apt-get install -y \
   kpackagelauncherqml
 # Applications
 apt-get install -y \
-  voicecall
+  voicecall \
+  plasma-nm
 
 apt-get -y clean
 
@@ -155,4 +156,6 @@ mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 
 # Make this chroot larger so we end up with a larger / on the final phone install
-fallocate -l 100M /SPACE-FILE
+# make 10 of them because 1 large file, even if it's empty, makes gzip take up too much
+# memory on the server and crap out
+for asdf in `seq 1 10`; do fallocate -l 100M SPACE-FILE${asdf}; done
