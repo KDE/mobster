@@ -158,4 +158,4 @@ mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 # Make this chroot larger so we end up with a larger / on the final phone install
 # make 10 of them because 1 large file, even if it's empty, makes gzip take up too much
 # memory on the server and crap out
-for asdf in `seq 1 10`; do fallocate -l 100M SPACE-FILE${asdf}; done
+# for asdf in `seq 1 10`; do fallocate -l 100M SPACE-FILE${asdf}; done
