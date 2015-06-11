@@ -129,7 +129,11 @@ apt-get install -y \
   qtdeclarative5-private-dev \
   qml-module-org-kde-* \
   plasma-phone-dev-setup \
-  plasma-phone-settings
+  plasma-phone-settings \
+  kpackagelauncherqml
+# Applications
+apt-get install -y \
+  voicecall
 
 apt-get -y clean
 
@@ -151,4 +155,4 @@ mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 
 # Make this chroot larger so we end up with a larger / on the final phone install
-dd bs=1M count=2000 if=/dev/random of=/SPACE-FILE
+openssl rand -out sample.txt -base64 $(( 2**30 * 3/4 ))
