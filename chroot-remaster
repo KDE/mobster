@@ -151,4 +151,4 @@ mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 
 # Make this chroot larger so we end up with a larger / on the final phone install
-dd bs=1M count=2000 if=/dev/zero of=/SPACE-FILE
+dd bs=1M count=2000 if=/dev/random of=/SPACE-FILE
