@@ -169,7 +169,8 @@ apt-get install -y \
 # Applications
 apt-get install -y \
   voicecall \
-  plasma-nm
+  plasma-nm \
+  plasma-camera
 
 apt-get -y clean
 
