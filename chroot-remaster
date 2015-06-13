@@ -174,7 +174,8 @@ apt-get install -y \
   plasma-nm \
   plasma-camera \
   plasma-maliit-framework \
-  plasma-maliit-plugins
+  plasma-maliit-plugins \
+  plasma-sdk
 
 apt-get -y clean
 
