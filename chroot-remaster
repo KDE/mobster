@@ -176,7 +176,8 @@ apt-get install -y \
   plasma-maliit-framework \
   plasma-maliit-plugins \
   plasma-sdk \
-  plasma-settings
+  plasma-settings \
+  mtp-server
 
 apt-get -y clean
 
