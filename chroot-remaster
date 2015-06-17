@@ -168,6 +168,8 @@ apt-get install -y \
   plasma-phone-dev-setup \
   plasma-phone-settings \
   kpackagelauncherqml
+# FIXME workaround for initramfs breaking :(
+rm /var/lib/dpkg/triggers/update-initramfs
 # Applications
 apt-get install -y \
   voicecall \
