@@ -178,7 +178,7 @@ apt-get install -y \
   plasma-sdk \
   plasma-settings \
   kdeconnect-plasma
-apt-get remove mtp-server
+apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
 apt-get -y clean
