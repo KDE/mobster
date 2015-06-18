@@ -179,7 +179,8 @@ apt-get install -y \
   plasma-maliit-plugins \
   plasma-sdk \
   plasma-settings \
-  kdeconnect-plasma
+  kdeconnect-plasma \
+  koko
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
