@@ -157,6 +157,7 @@ apt-get install -y \
   libpam-modules-bin \
   vim
 # KF5 Stack
+# kwin-style-breeze: https://github.com/plasma-mobile/mobster/issues/88
 apt-get install -y \
   konsole \
   kwin \
@@ -169,7 +170,8 @@ apt-get install -y \
   qml-module-org-kde-* \
   plasma-phone-dev-setup \
   plasma-phone-settings \
-  kpackagelauncherqml
+  kpackagelauncherqml \
+  kwin-style-breeze 
 # FIXME workaround for initramfs breaking :(
 rm /var/lib/dpkg/triggers/update-initramfs
 # Applications
