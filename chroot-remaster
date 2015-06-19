@@ -17,6 +17,7 @@ ln -s /bin/true /usr/sbin/invoke-rc.d
 apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
 apt-add-repository -y ppa:plasma-phone/ci
+apt-add-repository -y multiverse
 #add repository which has packages built out of CI
 apt-add-repository http://pangea-data-lax-dci.s3.amazonaws.com/dci/plasma-phone/debian
 #key for above repository
