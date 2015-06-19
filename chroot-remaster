@@ -69,6 +69,7 @@ apt-get remove --purge -y \
   ubuntu-keyboard \
   libmaliit-plugins0 \
   whoopsie \
+  apport \
   maliit-framework
 # Possibly relevant. At least relevant enough to not be removed for the time
 # being.
