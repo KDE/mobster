@@ -51,6 +51,15 @@ E8h+hEwC9yn+GErgrWtihLpm7ZHIePi3vhCkwiMh7wJQSvHQfd4k037jj8v3Tf4M
 a4hw1LvfpbOxVBwDdqEFgH6LQI5eXNGwR9Ps3F1KA3yNVI2FKbArVPQ=
 =UBq7
 EOL
+# MCI new CI combining all of the above nonsense into one CI source
+add-apt-repository -y 'deb http://mobile.kci.pangea.pub vivid main'
+# And key
+apt-get install -y wget
+pushd /tmp
+rm key || true
+wget http://mobile.kci.pangea.pub/Pangea%20CI.gpg.key -O key
+apt-key add key
+popd
 
 apt-get update
 
