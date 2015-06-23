@@ -195,6 +195,7 @@ apt-get install -y \
   plasma-sdk \
   plasma-settings \
   kdeconnect-plasma \
+  plasma-volume-control \
   koko
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
