@@ -80,7 +80,8 @@ apt-get remove --purge -y \
   libmaliit-plugins0 \
   whoopsie \
   apport \
-  maliit-framework
+  maliit-framework \
+  qtubuntu-media
 # Possibly relevant. At least relevant enough to not be removed for the time
 # being.
 #   apg \
@@ -156,7 +157,8 @@ apt-get install -y \
   system-image-common \
   system-image-dbus \
   system-image-cli \
-  apparmor
+  apparmor \
+  gstreamer0.10-fluendo-mp3
 # More Foundation. In particular everything here is related to enabling
 # the phablet user which is an extrausers user.
 apt-get install -y \
