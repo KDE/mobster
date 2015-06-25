@@ -16,7 +16,6 @@ ln -s /bin/true /usr/sbin/invoke-rc.d
 #   reliable after, because we need it to supply our mangled session.
 apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
-apt-add-repository -y ppa:plasma-phone/ci
 apt-add-repository -y multiverse
 # MCI new CI combining all of the above nonsense into one CI source
 add-apt-repository -y 'deb http://mobile.kci.pangea.pub vivid main'
@@ -164,7 +163,8 @@ apt-get install -y \
   plasma-settings \
   kdeconnect-plasma \
   plasma-volume-control \
-  koko
+  koko \
+  bluedevil
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
