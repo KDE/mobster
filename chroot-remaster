@@ -163,8 +163,8 @@ apt-get install -y \
   plasma-settings \
   kdeconnect-plasma \
   plasma-volume-control \
-  koko \
-  bluedevil
+  koko
+#  bluedevil
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
