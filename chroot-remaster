@@ -163,6 +163,8 @@ apt-get install -y \
   plasma-settings \
   kdeconnect-plasma \
   plasma-volume-control \
+  kinfocenter \
+  muon-discover \
   koko
 #  bluedevil
 apt-get remove -y mtp-server
