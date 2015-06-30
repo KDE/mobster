@@ -47,7 +47,8 @@ apt-get remove --purge -y \
   whoopsie \
   apport \
   maliit-framework \
-  qtubuntu-media
+  qtubuntu-media \
+  telephony-service
 # Possibly relevant. At least relevant enough to not be removed for the time
 # being.
 #   apg \
