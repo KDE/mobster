@@ -19,10 +19,9 @@ function chroot_teardown {
     return
   fi
 
-  echo "=== lsof on extract and killall avahi"
-  lsof | grep extract
-  killall avahi-daemon
-  lsof | grep extract
+  echo "=== killall update-apt-xapian-index"
+  # this holds onto some files in /dev making unmounting not always reliable
+  killall update-apt-xapian-index
   echo "=== Un-Binding /proc, /sys and /dev"
   umount $EXTRACTDIR/sys
   umount $EXTRACTDIR/dev/pts

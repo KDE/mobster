@@ -172,6 +172,10 @@ apt-get install -y mtp-server
 
 apt-get -y clean
 
+echo QT_QPA_PLATFORM=wayland >> /etc/environment
+echo FORCE_RIL_NUM_MODEMS=1 >> /etc/environment
+echo PATH=$PATH:/usr/games:/usr/local/games >> /etc/environment
+
 # Cleanup
 rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
       /etc/apt/apt.conf.d/debug \
