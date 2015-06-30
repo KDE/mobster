@@ -27,6 +27,13 @@ wget http://mobile.kci.pangea.pub/Pangea%20CI.gpg.key -O key
 apt-key add key
 popd
 
+# pin our repository
+cat <<EOF > /etc/apt/preferences.d/phone-900
+Package: *
+Pin: release o=vagrant,l='apt repository'
+Pin-Priority: 900
+EOF
+
 apt-get update
 
 # Hold ubuntu-touch-session at a managled version. We specifically break
