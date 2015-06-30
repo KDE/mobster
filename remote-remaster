@@ -53,6 +53,13 @@ function chroot_setup {
   mount -t sysfs /sys  $EXTRACTDIR/sys
 }
 
+MOUNTED=`mount | grep $EXTRACTDIR`
+if [ -n "$MOUNTED" ]; then
+    echo "mounts still exist in $EXTRACTDIR"
+    exit 1
+fi
+
+
 [[ -d "$CACHEDIR" ]] || mkdir -p $CACHEDIR
 
 rm -rf $OUTDIR
