@@ -165,8 +165,8 @@ apt-get install -y \
   plasma-volume-control \
   kinfocenter \
   muon-discover \
-  koko
-#  bluedevil
+  koko \
+  bluedevil
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 

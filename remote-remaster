@@ -19,8 +19,13 @@ function chroot_teardown {
     return
   fi
 
+  echo "=== lsof on extract and killall avahi"
+  lsof | grep extract
+  killall avahi-daemon
+  lsof | grep extract
   echo "=== Un-Binding /proc, /sys and /dev"
   umount $EXTRACTDIR/sys
+  umount $EXTRACTDIR/dev/pts
   umount $EXTRACTDIR/dev
   umount $EXTRACTDIR/proc
 
@@ -43,9 +48,10 @@ function chroot_setup {
   cp /etc/resolv.conf $EXTRACTDIR/etc/
 
   echo "=== Binding /proc, /sys and /dev"
-  mount --bind /dev  $EXTRACTDIR/dev
-  mount --bind /proc $EXTRACTDIR/proc
-  mount --bind /sys  $EXTRACTDIR/sys
+  mount -t devtmpfs none  $EXTRACTDIR/dev
+  mount -t devpts none  $EXTRACTDIR/dev/pts
+  mount -t proc /proc $EXTRACTDIR/proc
+  mount -t sysfs /sys  $EXTRACTDIR/sys
 }
 
 [[ -d "$CACHEDIR" ]] || mkdir -p $CACHEDIR
