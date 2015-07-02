@@ -31,7 +31,7 @@ popd
 cat <<EOF > /etc/apt/preferences.d/phone-900
 Package: *
 Pin: release o=vagrant
-Pin-Priority: 900
+Pin-Priority: 1100
 EOF
 
 apt-get update
