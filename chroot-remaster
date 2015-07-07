@@ -147,8 +147,8 @@ apt-get install -y \
 # --force-yes is needed because it downgrades libqt5qml
 apt-get install -y --force-yes \
   konsole \
-  kwin \
-  kwin-hwcomposer-backend \
+  kwin-wayland \
+  kwin-wayland-backend-hwcomposer \
   plasma-phone-components \
   qtwayland5 \
   xwayland \
