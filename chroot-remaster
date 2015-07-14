@@ -116,7 +116,7 @@ apt-get remove --purge -y \
 #   via some meta if wanted.
 
 apt-get -yf install
-apt-get install plasma-phone
+apt-get install -y plasma-phone
 # FIXME workaround for initramfs breaking :(
 rm /var/lib/dpkg/triggers/update-initramfs
 apt-get remove -y mtp-server
