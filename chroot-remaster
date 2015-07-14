@@ -116,66 +116,9 @@ apt-get remove --purge -y \
 #   via some meta if wanted.
 
 apt-get -yf install
-# Hybris
-apt-get install -y \
-  libhybris \
-  libhybris-common1 \
-  libhybris-test \
-  libhybris-utils
-# Foundation wiring we will need to work with ubuntu-touch tooling.
-# This might also need parts of ubuntu-touch-session
-apt-get install -y \
-  initramfs-tools-ubuntu-touch \
-  ubuntu-touch-generic-initrd \
-  ubuntu-touch-customization-hooks \
-  system-image-common \
-  system-image-dbus \
-  system-image-cli \
-  apparmor \
-  gstreamer0.10-fluendo-mp3
-# More Foundation. In particular everything here is related to enabling
-# the phablet user which is an extrausers user.
-apt-get install -y \
-  lxc-android-config \
-  libnss-extrausers \
-  libpam-modules \
-  libpam-modules-bin \
-  vim \
-  bash-completion
-# KF5 Stack
-# kwin-style-breeze: https://github.com/plasma-mobile/mobster/issues/88
-# --force-yes is needed because it downgrades libqt5qml
-apt-get install -y --force-yes \
-  konsole \
-  kwin-wayland \
-  kwin-wayland-backend-hwcomposer \
-  plasma-phone-components \
-  qtwayland5 \
-  xwayland \
-  simplelogin \
-  qtdeclarative5-private-dev \
-  qml-module-org-kde-* \
-  plasma-phone-dev-setup \
-  plasma-phone-settings \
-  kpackagelauncherqml \
-  kwin-style-breeze 
+apt-get install plasma-phone
 # FIXME workaround for initramfs breaking :(
 rm /var/lib/dpkg/triggers/update-initramfs
-# Applications
-apt-get install -y \
-  voicecall \
-  plasma-nm \
-  plasma-camera \
-  plasma-maliit-framework \
-  plasma-maliit-plugins \
-  plasma-sdk \
-  plasma-settings \
-  kdeconnect-plasma \
-  plasma-volume-control \
-  kinfocenter \
-  muon-discover \
-  koko \
-  okular
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
@@ -202,6 +145,6 @@ mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 # Make this chroot larger so we end up with a larger / on the final phone install
 # make 100 of them because 1 large file, even if it's empty, makes gzip take up too much
 # memory on the server and crap out
-#mkdir /pad
-#cd /pad
-#for asdf in `seq 0 100`; do truncate -s 10M padfile-${asdf}; done
+mkdir /pad
+cd /pad
+for asdf in `seq 0 1`; do truncate -s 10M padfile-${asdf}; done
