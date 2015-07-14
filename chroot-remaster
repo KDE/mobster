@@ -200,8 +200,8 @@ mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 
 # Make this chroot larger so we end up with a larger / on the final phone install
-# make 1000 of them because 1 large file, even if it's empty, makes gzip take up too much
+# make 100 of them because 1 large file, even if it's empty, makes gzip take up too much
 # memory on the server and crap out
-mkdir /pad
-cd /pad
-for asdf in `seq 0 100`; do truncate -s 10M padfile-${asdf}; done
+#mkdir /pad
+#cd /pad
+#for asdf in `seq 0 100`; do truncate -s 10M padfile-${asdf}; done
