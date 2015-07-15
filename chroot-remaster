@@ -135,6 +135,9 @@ echo QT_QPA_PLATFORM=wayland >> /etc/environment
 echo FORCE_RIL_NUM_MODEMS=1 >> /etc/environment
 sed s,PATH.*,, /etc/environment -i
 echo PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games >> /etc/environment
+sed s,QT_IM_MODULE.*,, /etc/environment -i
+echo QT_IM_MODULE=maliit >> /etc/environment
+
 
 # Cleanup
 rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
