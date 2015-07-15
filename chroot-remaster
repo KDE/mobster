@@ -34,6 +34,10 @@ Pin: release o=vagrant
 Pin-Priority: 1100
 EOF
 
+# for some reason ubuntu touch is set to not install recommends but
+# lots of our packages need them
+rm /etc/apt/apt.conf.d/00recommends
+
 apt-get update
 
 # Hold ubuntu-touch-session at a managled version. We specifically break
@@ -145,6 +149,7 @@ mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 # Make this chroot larger so we end up with a larger / on the final phone install
 # make 100 of them because 1 large file, even if it's empty, makes gzip take up too much
 # memory on the server and crap out
-mkdir /pad
-cd /pad
-for asdf in `seq 0 1`; do truncate -s 10M padfile-${asdf}; done
+# this doesn't work, it just takes up space without making more
+#mkdir /pad
+#cd /pad
+#for asdf in `seq 0 1`; do truncate -s 10M padfile-${asdf}; done
