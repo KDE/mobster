@@ -62,7 +62,8 @@ apt-get remove --purge -y \
   telephony-service \
   account-plugin-google \
   account-plugin-twitter \
-  account-plugin-flickr
+  account-plugin-flickr \
+  account-plugin-facebook
 # Possibly relevant. At least relevant enough to not be removed for the time
 # being.
 #   apg \
