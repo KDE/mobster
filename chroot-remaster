@@ -59,7 +59,8 @@ apt-get remove --purge -y \
   apport \
   maliit-framework \
   qtubuntu-media \
-  telephony-service
+  telephony-service \
+  account-plugin-google
 # Possibly relevant. At least relevant enough to not be removed for the time
 # being.
 #   apg \
@@ -67,7 +68,6 @@ apt-get remove --purge -y \
 #   system-image-dbus \
 # account-plugin-facebook \
 # account-plugin-flickr \
-# account-plugin-google \
 # account-plugin-twitter \
 # adwaita-icon-theme \
 # humanity-icon-theme \
