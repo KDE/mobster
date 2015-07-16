@@ -129,6 +129,9 @@ apt-get install -y --force-yes plasma-phone
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
+# https://github.com/blue-systems/mobster/issues/153
+apt-get install -y signon-ui-service=0.17+15.04.20150410-0ubuntu1+phone1 signon-ui-x11=0.17+15.04.20150410-0ubuntu1+phone1
+
 apt-get -y clean
 
 echo QT_QPA_PLATFORM=wayland >> /etc/environment
