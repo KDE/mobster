@@ -159,6 +159,15 @@ rm -f /etc/dpkg/dpkg.cfg.d/unsafe-io \
       /etc/apt/apt.conf.d/cacher
 mv /usr/sbin/invoke-rc.d.bak /usr/sbin/invoke-rc.d
 
+# Reconfigure the resolvconf service
+# NetworkManager is using resolvconf + dnsmasq combo
+# resolvconf writes DNS resolution config in /run/resolvconf/resolv.conf
+# however since first time installation is not run it will never be symlinked
+# to /etc/resolv.conf, so run manually
+# This eliminates the need for wifi-setup script and you can use any
+# network connections on the fly
+dpkg-reconfigure -f noninteractive resolvconf
+
 # Rename the simplelogin job to lightdm.
 # A lot of the ubuntu-touch jobs do explicitly "start/stop on lightdm" which
 # means they will not work without the job.
