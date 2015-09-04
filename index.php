@@ -47,6 +47,10 @@ body {
 
 <code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org" touch --channel="kubuntu-phone/devel" --bootstrap --developer-mode --password 1234</code>
 
+<?php
+print("PHP rocks");
+?>
+
 <p>or for latest dev image run:</p>
 
 <code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org" touch --channel="kubuntu-phone/devel-proposed" --bootstrap --developer-mode --password 1234</code>

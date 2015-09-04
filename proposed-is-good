@@ -1,11 +1,54 @@
-# you have tested a proposed image and want to move it to final
-# ./proposed-is-good 20150330.150615
+#!/usr/bin/python
 
-cd ~/kubuntu/remaster/daily-preinstalled
-ln -s ~/kubuntu/remaster-proposed/daily-preinstalled/$1/
+# look through remaster/daily-preinstalled for latest
+# get date and build number
+# copy to remaster/daily-preinstalled
+# run system image
+# link images
 
-cd ~/kubuntu/system-image
-./bin/import-images -vvvv
-cd www
-ln -s ~/kubuntu/mobster/15020612107_4561b13fff_k.jpg
-ln -s ~/kubuntu/mobster/index.html
+# Copyright Jonathan Riddell 2015
+# May be copied under the GNU GPL v3 or later
+
+import os
+import subprocess
+import json
+
+workingDirectory = os.environ['HOME'] + "/kubuntu/"
+debugging = True
+
+def debug(message):
+  if debugging:
+    print "DEBUG " + message
+
+# find the latest image and link it
+dailyPreinstalled = os.listdir(workingDirectory + "remaster-proposed/daily-preinstalled/")
+dailyPreinstalled.sort()
+for build in reversed(dailyPreinstalled):
+  if not build.startswith("201"):
+    debug("skipping" + build)
+    continue
+  if os.path.exists(workingDirectory + "remaster-proposed/daily-preinstalled/" + build + "/vivid-preinstalled-touch-armhf.tar.gz"):
+    os.chdir(workingDirectory + "remaster/daily-preinstalled/")
+    os.symlink(workingDirectory + "remaster-proposed/daily-preinstalled/" + build, build)
+    debug("added symlink to: " + build)
+    break
+
+# run import-images
+os.chdir(workingDirectory + "system-image/")
+subprocess.call(["./bin/import-images", "-vvvv"])
+
+# it removes the links to the web index, add them back
+os.chdir("www")
+webFiles = ["15020612107_4561b13fff_k.jpg", "index.php", "plasma-mobile-logo.png"]
+for linkFile in webFiles:
+  os.symlink(workingDirectory + "mobster/"+linkFile, linkFile)
+
+fp = open(workingDirectory + "system-image/www/kubuntu-phone/devel-proposed/hammerhead/index.json")
+out = json.load(fp)
+description = str(out["images"][0]["description"])
+proposedDevelBuildVersion = description.split("version=")[1]
+
+fp = open(workingDirectory + "system-image/www/kubuntu-phone/devel/hammerhead/index.json")
+out = json.load(fp)
+description = str(out["images"][0]["description"])
+develBuildVersion = description.split("version=")[1]
