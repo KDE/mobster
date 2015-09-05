@@ -75,12 +75,13 @@ apt-get remove --purge -y \
 # account-plugin-twitter \
  adwaita-icon-theme \
  humanity-icon-theme \
- suru-icon-theme
-# indicator-bluetooth \
-# indicator-keyboard \
-# indicator-location \
-# indicator-network \
-# indicator-transfer \
+ suru-icon-theme \
+ ubuntu-touch \
+ indicator-bluetooth \
+ indicator-keyboard \
+ indicator-location \
+ indicator-network \
+ indicator-transfer
 # qtdeclarative5-ubuntu-contacts0.1 \
 # qtdeclarative5-ubuntu-content1 \
 # qtdeclarative5-ubuntu-telephony-phonenumber0.1 \
