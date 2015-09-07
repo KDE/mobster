@@ -75,7 +75,6 @@ apt-get remove --purge -y \
   indicator-network \
   indicator-transfer \
   mir-test-tools \
-  ubuntu-touch-session \
   account-polld \
   accountsservice-ubuntu-schemas \
   accountsservice-ubuntu-touch-schemas \
@@ -96,7 +95,6 @@ apt-get remove --purge -y \
   account-plugin-google \
   ubuntu-touch-customization-hooks \
   system-image-cli \
-  ubuntu-touch-session \
   unity8 \
   indicator-bluetooth \
   indicator-datetime \
