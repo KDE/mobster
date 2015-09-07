@@ -45,15 +45,25 @@ body {
 
 <p>Get a Nexus 5 and unlock it, put into firmware mode and run:</p>
 
-<code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org" touch --channel="kubuntu-phone/devel" --bootstrap --developer-mode --password 1234</code>
-
+<code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org" touch --channel="kubuntu-phone/devel" --bootstrap --developer-mode --password 1234
+<br />
 <?php
-print("PHP rocks");
+$string = file_get_contents("kubuntu-phone/devel/hammerhead/index.json");
+$json = json_decode($string, true);
+echo $json["images"][0]["description"];
 ?>
+</code>
 
 <p>or for latest dev image run:</p>
 
-<code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org" touch --channel="kubuntu-phone/devel-proposed" --bootstrap --developer-mode --password 1234</code>
+<code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org" touch --channel="kubuntu-phone/devel-proposed" --bootstrap --developer-mode --password 1234
+<br />
+<?php
+$string = file_get_contents("kubuntu-phone/devel-proposed/hammerhead/index.json");
+$json = json_decode($string, true);
+echo $json["images"][0]["description"];
+?>
+</code>
 
 <p>and log in with <code>adb shell</code></p>
 
