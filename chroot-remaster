@@ -73,56 +73,66 @@ apt-get remove --purge -y \
   indicator-keyboard \
   indicator-location \
   indicator-network \
-  indicator-transfer
-# Possibly relevant. At least relevant enough to not be removed for the time
-# being.
-#   apg \
-#   system-image-common \
-#   system-image-dbus \
-# account-plugin-facebook \
-# account-plugin-flickr \
-# account-plugin-twitter \
-# qtdeclarative5-ubuntu-contacts0.1 \
-# qtdeclarative5-ubuntu-content1 \
-# qtdeclarative5-ubuntu-telephony-phonenumber0.1 \
-# qtdeclarative5-ubuntu-telephony0.1 \
-# qtdeclarative5-ubuntu-ui-extras-browser-plugin \
-# qtdeclarative5-ubuntu-ui-extras0.2 \
-# qtdeclarative5-ubuntu-web-plugin \
-# qtdeclarative5-ubuntuone1.0 \
-# qtdeclarative5-usermetrics0.1 \
-# qtubuntu-sensors \
-# ubuntu-application-api2-test \
-# ubuntu-application-api2-touch \
-# ubuntu-download-manager \
-# ubuntu-keyboard \
-# ubuntu-location-provider-here \
-# ubuntu-location-service-bin \
-# ubuntu-mobile-icons \
-# ubuntu-mono \
-# ubuntu-push-client \
-# ubuntu-system-settings \
-# ubuntu-system-settings-online-accounts \
-# ubuntu-upload-manager \
-# ubuntuone-client-data \
-# unity-asset-pool \
-# unity-control-center \
-# unity-plugin-scopes \
-# unity-scope-mediascanner2 \
-# unity-settings-daemon \
-# unity-system-compositor \
-# ibus \
-# nano \
-# obex-data-server \
-# qtmir-android \
-# telephony-service \
-# url-dispatcher \
-# whoopsie-preferences \
+  indicator-transfer \
+  mir-test-tools \
+  ubuntu-touch-session \
+  account-polld \
+  accountsservice-ubuntu-schemas \
+  accountsservice-ubuntu-touch-schemas \
+  address-book-service \
+  apparmor-easyprof-ubuntu \
+  bluetooth-touch \
+  cameraplugin-aal \
+  fonts-takao-pgothic \
+  fonts-wqy-microhei \
+  media-hub \
+  mediascanner2.0 \
+  fonts-lohit-deva \
+  account-plugin-tools \
+  account-plugin-twitter \
+  account-plugin-facebook \
+  account-plugin-flickr \
+  account-plugin-ubuntuone \
+  account-plugin-google \
+  ubuntu-touch-customization-hooks \
+  system-image-cli \
+  ubuntu-touch-session \
+  unity8 \
+  indicator-bluetooth \
+  indicator-datetime \
+  indicator-display \
+  indicator-location \
+  indicator-messages \
+  indicator-network \
+  indicator-power \
+  indicator-sound \
+  indicator-transfer \
+  indicator-transfer-download-manager \
+  unity-scope-scopes \
+  unity-scope-click \
+  unity-scope-mediascanner2 \
+  url-dispatcher \
+  thumbnailer-service \
+  webbrowser-app \
+  webapp-container \
+  dialer-app \
+  messaging-app \
+  address-book-app \
+  mediaplayer-app \
+  syncevolution \
+  sync-monitor-uoa \
+  ubuntu-touch-settings \
+  ubuntu-system-settings \
+  ubuntu-system-settings-online-accounts \
+  policykit-desktop-privileges \
+  qtdeclarative5-ubuntu-ui-extras0.2 \
+  qtorganizer5-eds \
+  unity-webapps-qml \
+  oxideqt-codecs-extra \
+  ubuntu-location-provider-here \
+  ubuntu-touch-sounds
 
-# FIXME: powerd might be relevant but depends on ubuntu-apps-api2
-# FIXME: there are plenty of relevant packages danling now, this needs
-#   a full review of dangling packages and removal if not wanted or holding
-#   via some meta if wanted.
+apt-get autoremove
 
 apt-get -yf install
 # FIXME workaround for initramfs breaking :(
