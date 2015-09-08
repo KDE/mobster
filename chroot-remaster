@@ -132,7 +132,7 @@ apt-get remove --purge -y \
   ubuntu-location-provider-here \
   ubuntu-touch-sounds
 
-apt-get -y autoremove
+#apt-get -y autoremove
 
 apt-get -yf install
 # FIXME workaround for initramfs breaking :(
