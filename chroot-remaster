@@ -130,7 +130,8 @@ apt-get remove --purge -y \
   unity-webapps-qml \
   oxideqt-codecs-extra \
   ubuntu-location-provider-here \
-  ubuntu-touch-sounds
+  ubuntu-touch-sounds \
+  bluez
 
 #apt-get -y autoremove
 
