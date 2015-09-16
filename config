@@ -31,6 +31,16 @@ file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-propos
 file_keyring = keyring;archive-master
 file_version = version
 
+[channel_kubuntu-phone/devel-proposed-e5]
+type = auto
+versionbase = 1
+fullcount = 1
+files = ubuntu, device, keyring, version
+file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster-proposed/daily-preinstalled/;vivid;import=any
+file_device = remote-system-image;https://system-image.ubuntu.com/;devel-proposed;device;keyring=archive-master
+file_keyring = keyring;archive-master
+file_version = version
+
 
 [channel_test]
 type = auto
