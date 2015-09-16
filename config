@@ -1,7 +1,7 @@
 [global]
 base_path = /home/ubuntu/kubuntu/system-image/
 #channels = trusty, trusty-proposed, trusty-customized
-channels = kubuntu-phone/devel, kubuntu-phone/devel-proposed
+channels = kubuntu-phone/devel, kubuntu-phone/devel-proposed, kubuntu-phone/devel-proposed-e5
 gpg_key_path = secret/gpg/keys/
 gpg_keyring_path = secret/gpg/keyrings/
 publish_path = /home/ubuntu/kubuntu/system-image/www
