@@ -54,7 +54,7 @@ body {
 
 <p>Get a Nexus 5 and unlock it, put into firmware mode and run:</p>
 
-<code>ubuntu-device-flash --server="http://neon.plasma-phone.org" touch --channel="neon-phone/devel" --bootstrap --developer-mode --password 1234
+<code>ubuntu-device-flash --server="http://neon.plasma-phone.org" touch --channel="neon-mobile/devel" --bootstrap --developer-mode --password 1234
 <br />
 <?php
 $string = file_get_contents("neon-mobile/devel/hammerhead/index.json");
@@ -65,7 +65,7 @@ echo $json["images"][0]["description"];
 
 <p>or for latest dev image run:</p>
 
-<code>ubuntu-device-flash --server="http://neon.plasma-phone.org" touch --channel="neon-phone/devel-proposed" --bootstrap --developer-mode --password 1234
+<code>ubuntu-device-flash --server="http://neon.plasma-phone.org" touch --channel="neon-mobile/devel-proposed" --bootstrap --developer-mode --password 1234
 <br />
 <?php
 $string = file_get_contents("neon-mobile/devel-proposed/hammerhead/index.json");
