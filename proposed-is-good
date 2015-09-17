@@ -43,12 +43,12 @@ webFiles = ["15020612107_4561b13fff_k.jpg", "index.php", "plasma-mobile-logo.png
 for linkFile in webFiles:
   os.symlink(workingDirectory + "mobster/"+linkFile, linkFile)
 
-fp = open(workingDirectory + "system-image/www/kubuntu-phone/devel-proposed/hammerhead/index.json")
+fp = open(workingDirectory + "system-image/www/neon-mobile/devel-proposed/hammerhead/index.json")
 out = json.load(fp)
 description = str(out["images"][0]["description"])
 proposedDevelBuildVersion = description.split("version=")[1]
 
-fp = open(workingDirectory + "system-image/www/kubuntu-phone/devel/hammerhead/index.json")
+fp = open(workingDirectory + "system-image/www/neon-mobile/devel/hammerhead/index.json")
 out = json.load(fp)
 description = str(out["images"][0]["description"])
 develBuildVersion = description.split("version=")[1]
