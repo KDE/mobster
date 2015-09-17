@@ -47,6 +47,7 @@ body {
 <body>
 <div class="opacity">
 <a href="http://plasma-mobile.org/"><img src="plasma-mobile-logo.png" width="491" height="170" /></a>
+<img src="neon.png" width="218" height="205" />
 <h1>Plasma Mobile "Neon" Reference Images</h1>
 
 <p>All very experimental</p>
