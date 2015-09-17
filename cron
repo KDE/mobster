@@ -15,3 +15,4 @@ cd www
 ln -s ~/kubuntu/mobster/15020612107_4561b13fff_k.jpg
 ln -s ~/kubuntu/mobster/index.php
 ln -s ~/kubuntu/mobster/plasma-mobile-logo.png
+ln -s ~/kubuntu/mobster/neon.png
