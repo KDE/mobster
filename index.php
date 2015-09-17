@@ -1,3 +1,11 @@
+<?php
+
+   if ($_SERVER["SERVER_NAME"] == "kubuntu.plasma-mobile.org") {
+      Header( "HTTP/1.1 301 Moved Permanently" );
+      header("location: http://neon.plasma-phone.org"); 
+   }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
