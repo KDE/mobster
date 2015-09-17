@@ -1,17 +1,17 @@
 [global]
 base_path = /home/ubuntu/kubuntu/system-image/
 #channels = trusty, trusty-proposed, trusty-customized
-channels = kubuntu-phone/devel, kubuntu-phone/devel-proposed, kubuntu-phone/devel-proposed-e5
+channels = neon-mobile/devel, neon-mobile/devel-proposed, neon-mobile/devel-proposed-e5
 gpg_key_path = secret/gpg/keys/
 gpg_keyring_path = secret/gpg/keyrings/
 publish_path = /home/ubuntu/kubuntu/system-image/www
 state_path = state/
 #mirrors = a, b
-public_fqdn = kubuntu.plasma-mobile.org
+public_fqdn = neon.plasma-mobile.org
 public_http_port = 80
 public_https_port = 443
 
-[channel_kubuntu-phone/devel]
+[channel_neon-mobile/devel]
 type = auto
 versionbase = 1
 fullcount = 1
@@ -21,7 +21,7 @@ file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-propos
 file_keyring = keyring;archive-master
 file_version = version
 
-[channel_kubuntu-phone/devel-proposed]
+[channel_neon-mobile/devel-proposed]
 type = auto
 versionbase = 1
 fullcount = 1
@@ -31,7 +31,7 @@ file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-propos
 file_keyring = keyring;archive-master
 file_version = version
 
-[channel_kubuntu-phone/devel-proposed-e5]
+[channel_neon-mobile/devel-proposed-e5]
 type = auto
 versionbase = 1
 fullcount = 1
