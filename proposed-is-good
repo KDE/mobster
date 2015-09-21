@@ -39,7 +39,7 @@ subprocess.call(["./bin/import-images", "-vvvv"])
 
 # it removes the links to the web index, add them back
 os.chdir("www")
-webFiles = ["15020612107_4561b13fff_k.jpg", "index.php", "plasma-mobile-logo.png"]
+webFiles = ["15020612107_4561b13fff_k.jpg", "index.php", "plasma-mobile-logo.png", "neon.png"]
 for linkFile in webFiles:
   os.symlink(workingDirectory + "mobster/"+linkFile, linkFile)
 
