@@ -28,9 +28,6 @@ function chroot_teardown {
   umount $EXTRACTDIR/dev
   umount $EXTRACTDIR/proc
 
-  echo "=== removing resolve.conf in chroot  `date`"
-  rm $EXTRACTDIR/etc/resolv.conf
-
   trap - EXIT SIGHUP SIGINT SIGTERM
   unset REMASTER_CHROOT_SETUP
 }
@@ -42,6 +39,9 @@ function chroot_setup {
 
   export REMASTER_CHROOT_SETUP=1
   trap chroot_teardown EXIT SIGHUP SIGINT SIGTERM
+
+  echo "=== setting up resolv.conf in chroot  `date`"
+  cp /etc/resolv.conf $EXTRACTDIR/etc/
 
   echo "=== Binding /proc, /sys and /dev"
   mount -t devtmpfs none  $EXTRACTDIR/dev
