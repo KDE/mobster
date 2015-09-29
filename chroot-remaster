@@ -31,7 +31,7 @@ popd
 # pin our repository
 cat <<EOF > /etc/apt/preferences.d/phone-900
 Package: *
-Pin: release o=vagrant
+Pin: origin "mobile.kci.pangea.pub"
 Pin-Priority: 1100
 EOF
 
