@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Copyright Jonathan Riddell and Harald Sitter 2015, may be copied under GNU GPL v2 or later
+# download ubuntu touch, upload it to the arm server, download remastered image from arm server
+
+set -ex
+
+__dir__=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+OUTPUTIMG=vivid-preinstalled-touch-armhf.tar.gz
+PROPOSEDDIR=~/kubuntu/remaster-proposed/daily-preinstalled/
+SYNCDIR=$PROPOSEDDIR/tmp
+IMGDIR=$PROPOSEDDIR/`date +%Y%m%d.%H%M%S`
+
+rm -rf $IMGDIR
+mkdir -p $IMGDIR
+
+cp $SYNCDIR/$OUTPUTIMG $IMGDIR
+
+echo "=== running shasum  `date`"
+cd $IMGDIR
+sha256sum $OUTPUTIMG > SHA256SUMS
+
+cd ~/kubuntu/system-image
+./bin/import-images -vvvv
+cd www
+ln -s ~/kubuntu/mobster/15020612107_4561b13fff_k.jpg
+ln -s ~/kubuntu/mobster/index.php
+ln -s ~/kubuntu/mobster/plasma-mobile-logo.png
+ln -s ~/kubuntu/mobster/neon.png
