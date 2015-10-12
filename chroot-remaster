@@ -255,7 +255,6 @@ apt-get remove --purge -y \
   ubuntu-mobile-icons \
   libgdata-common \
   usensord \
-  qtdeclarative5-ofono0.2 \
   usermetricsservice \
   gir1.2-networkmanager-1.0 \
   libunistring0 \
@@ -325,7 +324,6 @@ apt-get remove --purge -y \
   libqt5systeminfo5 \
   linux-sound-base \
   libphonenumber6 \
-  libofono-qt1 \
   lsof \
   liboxideqtquick0 \
   libhistoryservice0 \
@@ -343,11 +341,9 @@ apt-get remove --purge -y \
   gstreamer1.0-plugins-ugly-amr \
   libsyncevolution0 \
   gir1.2-signon-1.0 \
-  telepathy-ofono-ril-mc-plugin \
   pulseaudio-module-droid \
   qtdeclarative5-u1db1.0 \
   libmediainfo0 \
-  telepathy-ofono \
   health-check \
   mir-platform-graphics-android5 \
   libpcrecpp0 \
@@ -392,7 +388,6 @@ apt-get remove --purge -y \
   libzmq3 \
   libnss3-nssdb \
   libjsoncpp0 \
-  ofono-scripts \
   qtdeclarative5-qtfeedback-plugin \
   liboxideqtcore0 \
   ubuntu-sounds \
