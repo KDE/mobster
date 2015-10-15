@@ -150,7 +150,6 @@ apt-get remove --purge -y \
   unity-plugin-scopes \
   libdee-qt5-3 \
   debsig-verify \
-  urfkill \
   mir-client-platform-android3 \
   syncevolution-provider-uoa \
   dbus-property-service \
@@ -323,7 +322,6 @@ apt-get remove --purge -y \
   tcptraceroute \
   libqt5systeminfo5 \
   linux-sound-base \
-  libphonenumber6 \
   lsof \
   liboxideqtquick0 \
   libhistoryservice0 \
