@@ -53,13 +53,9 @@ apt-get install -y powerd
 
 apt-get remove --purge -y \
   account-plugin-facebook \
-  account-plugin-facebook \
   account-plugin-flickr \
-  account-plugin-flickr \
-  account-plugin-google \
   account-plugin-google \
   account-plugin-tools \
-  account-plugin-twitter \
   account-plugin-twitter \
   account-plugin-ubuntuone \
   account-polld \
@@ -118,18 +114,14 @@ apt-get remove --purge -y \
   humanity-icon-theme \
   hunspell-fr \
   indicator-bluetooth \
-  indicator-bluetooth \
   indicator-datetime \
   indicator-display \
   indicator-keyboard \
   indicator-location \
-  indicator-location \
   indicator-messages \
-  indicator-network \
   indicator-network \
   indicator-power \
   indicator-sound \
-  indicator-transfer \
   indicator-transfer \
   indicator-transfer-download-manager \
   iw \
@@ -378,7 +370,6 @@ apt-get remove --purge -y \
   unity-scope-scopes \
   unity-system-compositor \
   unity-webapps-qml \
-  unity8 \
   unity8 \
   upstart-watchdog \
   url-dispatcher \
