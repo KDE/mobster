@@ -58,7 +58,8 @@ body {
 
 <code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org/" touch --channel="neon-mobile/devel" --bootstrap --developer-mode --password 1234
 </code>
-<p style="font-size: smaller">
+<p>
+Last Available Image :
 <?php
 $string = file_get_contents("neon-mobile/devel/hammerhead/index.json");
 $json = json_decode($string, true);
@@ -70,7 +71,8 @@ echo $json["images"][0]["description"];
 
 <code>ubuntu-device-flash --server="http://kubuntu.plasma-mobile.org/" touch --channel="neon-mobile/devel-proposed" --bootstrap --developer-mode --password 1234
 </code>
-<p style="font-size: smaller">
+<p>
+Last Available Image :
 <?php
 $string = file_get_contents("neon-mobile/devel-proposed/hammerhead/index.json");
 $json = json_decode($string, true);
