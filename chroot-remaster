@@ -386,60 +386,7 @@ apt-get remove --purge -y \
 apt-get -yf install
 # FIXME workaround for initramfs breaking :(
 rm /var/lib/dpkg/triggers/update-initramfs
-apt-get install -y --force-yes \
-apparmor \
-bash-completion \
-discover \
-firefox \
-gstreamer0.10-fluendo-mp3 \
-initramfs-tools-ubuntu-touch \
-kdeconnect-plasma \
-kinfocenter \
-kio \
-kio-extras \
-koko \
-konsole \
-kpackagelauncherqml \
-kwin-style-breeze \
-kwin-wayland \
-kwin-wayland-backend-hwcomposer \
-libhybris1 \
-libhybris-common1 \
-libhybris-test \
-libhybris-utils \
-libnss-extrausers \
-libpam-modules \
-libpam-modules-bin \
-lxc-android-config \
-maliit-inputcontext-gtk \
-marble-maps \
-muon \
-okular-mobile \
-pam-kwallet5 \
-plasma-camera \
-plasma-maliit-framework \
-plasma-maliit-plugins \
-plasma-nm \
-plasma-phone-components \
-plasma-phone-dev-setup \
-plasma-phone-settings \
-plasma-sdk \
-plasma-settings \
-plasma-volume-control \
-qml-module-org-kde-* \
-qtdeclarative5-private-dev \
-qtwayland5 \
-screenshotapp \
-signon-ui \
-simplelogin \
-system-image-cli \
-system-image-common \
-system-image-dbus \
-ubuntu-touch-customization-hooks \
-ubuntu-touch-generic-initrd \
-vim \
-xwayland
-
+apt-get install -y --force-yes plasma-phone
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
