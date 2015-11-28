@@ -63,7 +63,6 @@ apt-get remove --purge -y \
   address-book-app \
   address-book-service \
   adwaita-icon-theme \
-  alsa-base \
   apparmor-easyprof-ubuntu \
   apport \
   bluetooth-touch \
@@ -253,7 +252,6 @@ apt-get remove --purge -y \
   libzmq3 \
   libzmqpp3 \
   lightdm \
-  linux-sound-base \
   lsof \
   ltrace \
   maliit-framework \
@@ -278,7 +276,6 @@ apt-get remove --purge -y \
   packagekit-plugin-click \
   policykit-desktop-privileges \
   powerstat \
-  pulseaudio-module-droid \
   pulseaudio-module-trust-store \
   python3-apport \
   python3-crypto \
