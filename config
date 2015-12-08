@@ -1,7 +1,7 @@
 [global]
 base_path = /home/ubuntu/kubuntu/system-image/
 #channels = trusty, trusty-proposed, trusty-customized
-channels = neon-mobile/devel, neon-mobile/devel-proposed, neon-mobile/devel-proposed-e5
+channels = neon-mobile/devel, neon-mobile/devel-proposed
 gpg_key_path = secret/gpg/keys/
 gpg_keyring_path = secret/gpg/keyrings/
 publish_path = /home/ubuntu/kubuntu/system-image/www
@@ -30,17 +30,6 @@ file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster-proposed/daily-preins
 file_device = remote-system-image;http://system-image.tasemnice.eu/;devel-proposed;device;keyring=archive-master
 file_keyring = keyring;archive-master
 file_version = version
-
-[channel_neon-mobile/devel-proposed-e5]
-type = auto
-versionbase = 1
-fullcount = 1
-files = ubuntu, device, keyring, version
-file_ubuntu = cdimage-ubuntu;/home/ubuntu/kubuntu/remaster-proposed/daily-preinstalled/;vivid;import=any
-file_device = remote-system-image;https://system-image.ubuntu.com/;devel-proposed;device;keyring=archive-master
-file_keyring = keyring;archive-master
-file_version = version
-
 
 [channel_test]
 type = auto
