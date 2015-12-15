@@ -17,6 +17,7 @@ apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
 apt-add-repository -y ppa:plasma-phone/ubuntu-apps
 apt-add-repository -y multiverse
+add-apt-repository -y 'deb http://ports.ubuntu.com/ubuntu-ports vivid-backports main restricted universe multiverse'
 # MCI new CI combining all of the above nonsense into one CI source
 add-apt-repository -y 'deb http://mobile.kci.pangea.pub vivid main'
 # And key
