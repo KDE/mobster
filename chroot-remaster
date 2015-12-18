@@ -391,8 +391,8 @@ apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
 # https://github.com/blue-systems/mobster/issues/153
-apt-get install -y signon-ui-service signon-ui-x11
-apt-get install -y telepathy-mission-control-5=1:5.16.3-1ubuntu1+phone1 libmission-control-plugins0=1:5.16.3-1ubuntu1+phone1 --force-yes
+apt-get install -y --force-yes signon-ui-service signon-ui-x11
+apt-get install -y --force-yes telepathy-mission-control-5=1:5.16.3-1ubuntu1+phone1 libmission-control-plugins0=1:5.16.3-1ubuntu1+phone1
 apt-get -y clean
 
 # dirty way to make some more space
