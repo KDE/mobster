@@ -204,11 +204,14 @@ apt-get remove --purge -y \
   libpresage-data \
   libpresage1 \
   libqdjango-db0 \
+  libqgsttools-p1 \
   libqmenumodel0 \
   libqt5feedback5 \
   libqt5keychain0 \
   libqt5location5 \
   libqt5location5-plugins \
+  libqt5multimediaquick-p5 \
+  libqt5multimediawidgets5 \
   libqt5positioning5-plugins \
   libqt5sensors5 \
   libqt5systeminfo5 \
@@ -283,10 +286,13 @@ apt-get remove --purge -y \
   python3-oauthlib \
   python3-problem-report \
   qmenumodel-qml \
+  qml-module-qt-labs-folderlistmodel \
   qml-module-qt-labs-settings \
   qml-module-qt-websockets \
   qml-module-qtfeedback \
+  qml-module-qtgraphicaleffects \
   qml-module-qtlocation \
+  qml-module-qtmultimedia \
   qml-module-qtpositioning \
   qml-module-qtqml-models2 \
   qml-module-qtqml-statemachine \
