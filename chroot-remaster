@@ -396,6 +396,16 @@ apt-get install -y --force-yes plasma-phone
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
+apt-get install -y animal-farm \
+  minesweeper-touch \
+  qml-module-qtlocation \
+  qml-module-qtpositioning \
+  sudoku-app \
+  ubuntu-calculator-app \
+  ubuntu-docviewer-app \
+  ubuntu-filemanager-app \
+  ubuntu-weather-app
+
 # https://github.com/blue-systems/mobster/issues/153
 apt-get install -y --force-yes signon-ui-service signon-ui-x11
 apt-get install -y --force-yes telepathy-mission-control-5=1:5.16.3-1ubuntu1+phone1 libmission-control-plugins0=1:5.16.3-1ubuntu1+phone1
