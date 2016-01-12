@@ -397,7 +397,9 @@ apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
 apt-get install -y animal-farm \
+  gstreamer1.0-plugins-ugly \
   minesweeper-touch \
+  music-app \
   qml-module-qtlocation \
   qml-module-qtpositioning \
   sudoku-app \
