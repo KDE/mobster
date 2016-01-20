@@ -20,7 +20,6 @@ apt-add-repository -y multiverse
 add-apt-repository -y 'deb http://ports.ubuntu.com/ubuntu-ports vivid-backports main restricted universe multiverse'
 # MCI new CI combining all of the above nonsense into one CI source
 add-apt-repository -y 'deb http://mobile.kci.pangea.pub vivid main'
-add-apt-repository -y 'deb-src http://mobile.kci.pangea.pub vivid main'
 # And key
 apt-get install -y wget
 pushd /tmp
