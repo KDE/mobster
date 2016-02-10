@@ -68,8 +68,8 @@ mkdir -p $EXTRACTDIR
 echo "=== syncing reference image  `date`"
 pushd $CACHEDIR
 apt-get install -y zsync psmisc
-zsync http://cdimage.ubuntu.com/ubuntu-touch/vivid/daily-preinstalled/current/vivid-preinstalled-touch-armhf.tar.gz.zsync
-img=$CACHEDIR/vivid-preinstalled-touch-armhf.tar.gz
+zsync http://cdimage.ubuntu.com/ubuntu-touch/$DIST/daily-preinstalled/current/$DIST-preinstalled-touch-armhf.tar.gz.zsync
+img=$CACHEDIR/$DIST-preinstalled-touch-armhf.tar.gz
 popd
 
 echo "=== extracting reference image  `date`"
@@ -88,5 +88,5 @@ echo "=== making a new tar - this takes an age  `date`"
 # image import, so the gzip we output here will not be the one used for
 # devices anyway. might as well improve for transfer here. all things considered
 pushd $EXTRACTDIR
-$TAR -cp * | gzip --rsyncable -1 >$OUTDIR/vivid-preinstalled-touch-armhf.tar.gz
+$TAR -cp * | gzip --rsyncable -1 >$OUTDIR/$DIST-preinstalled-touch-armhf.tar.gz
 popd
