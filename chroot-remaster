@@ -17,9 +17,9 @@ apt-get -y install software-properties-common
 apt-add-repository -y ppa:plasma-phone/ppa
 apt-add-repository -y ppa:plasma-phone/ubuntu-apps
 apt-add-repository -y multiverse
-add-apt-repository -y 'deb http://ports.ubuntu.com/ubuntu-ports vivid-backports main restricted universe multiverse'
+add-apt-repository -y 'deb http://ports.ubuntu.com/ubuntu-ports xenial-backports main restricted universe multiverse'
 # MCI new CI combining all of the above nonsense into one CI source
-add-apt-repository -y 'deb http://mobile.kci.pangea.pub vivid main'
+add-apt-repository -y 'deb http://mobile.kci.pangea.pub xenial main'
 # And key
 apt-get install -y wget
 pushd /tmp
@@ -46,7 +46,7 @@ apt-get update
 # apparently very important to the correct function of the image due to !unity
 # bits.
 apt-get install --force-yes -y \
-  ubuntu-touch-session=0.108+15.04.20150407-0ubuntu1+kubuntu1
+  ubuntu-touch-session=0.108+16.04.20160127-0ubuntu1+kubuntu2
 apt-mark hold ubuntu-touch-session
 
 apt-get install -y powerd
@@ -396,35 +396,10 @@ apt-get install -y --force-yes plasma-phone
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
-apt-get install -y animal-farm \
-  gstreamer1.0-plugins-ugly \
-  minesweeper-touch \
-  music-app \
-  qml-module-qtlocation \
-  qml-module-qtpositioning \
-  sudoku-app \
-  ubuntu-calculator-app \
-  ubuntu-docviewer-app \
-  ubuntu-filemanager-app \
-  ubuntu-weather-app
-
-# https://github.com/blue-systems/mobster/issues/153
-apt-get install -y --force-yes signon-ui-service signon-ui-x11
-apt-get install -y --force-yes telepathy-mission-control-5=1:5.16.3-1ubuntu1+phone1 libmission-control-plugins0=1:5.16.3-1ubuntu1+phone1
 apt-get -y clean
 
 # dirty way to make some more space
 rm -rf /usr/share/doc/*
-
-rm -rf /tmp/clicksies
-mkdir -p /tmp/clicksies
-pushd /tmp/clicksies
-wget -O stallboard.click "https://www.dropbox.com/s/vd1swwzbxaj0ihw/com.popey.stallboard_0.2_all.click?dl=0"
-pkcon install-local stallboard.click --allow-untrusted
-wget -O file.click "https://www.dropbox.com/s/mkxpmb7h9jyp4g3/com.ubuntu.filemanager_0.4.373_armhf.click?dl=0"
-pkcon install-local file.click --allow-untrusted
-popd # back to pwd
-rm -rf /tmp/clicksies
 
 echo QT_QPA_PLATFORM=wayland >> /etc/environment
 echo FORCE_RIL_NUM_MODEMS=1 >> /etc/environment
