@@ -197,7 +197,7 @@ apt-get remove --purge -y \
   libsignon-glib1 \
   libsmltk0 \
   libsnappy1 \
-  libsodium13 \
+  libsodium18 \
   libsyncevolution0 \
   libsynthesis0 \
   libsystemsettings1 \
