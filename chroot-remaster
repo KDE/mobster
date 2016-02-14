@@ -401,6 +401,10 @@ dpkg-reconfigure -f noninteractive resolvconf
 # pretend that simplelogin is lightdm. For the time being anyway.
 mv /etc/init/simplelogin.conf /etc/init/lightdm.conf
 
+# This override file is provided by something and it disables password auth
+# kill it
+rm /etc/init/ssh.override
+
 # Make this chroot larger so we end up with a larger / on the final phone install
 # make 100 of them because 1 large file, even if it's empty, makes gzip take up too much
 # memory on the server and crap out
