@@ -149,7 +149,7 @@ apt-get remove --purge -y \
   libhud2 \
   libical1a \
   libindicator-transfer0 \
-  libjsoncpp0 \
+  libjsoncpp1 \
   libleveldb1 \
   liblzo2-2 \
   libmaliit-plugins0 \
