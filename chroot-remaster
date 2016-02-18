@@ -363,8 +363,7 @@ apt-get install -y --force-yes plasma-phone
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
 
-apt-get install -y music-app \
-  ubuntu-calculator-app \
+apt-get install -y ubuntu-calculator-app \
   ubuntu-filemanager-app \
   ubuntu-weather-app
 
