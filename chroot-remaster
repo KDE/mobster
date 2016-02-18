@@ -134,7 +134,6 @@ apt-get remove --purge -y \
   libfolks25 \
   libgdata-common \
   libgdbussyncevo0 \
-  libgee2 \
   libgeoclue0 \
   libgeocode-glib0 \
   libgnome-keyring-common \
