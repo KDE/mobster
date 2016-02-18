@@ -366,6 +366,14 @@ apt-get install -y mtp-server
 
 apt-get -y clean
 
+# Replace built-in adbd with non-patched version
+pushd /tmp
+rm adbd || true
+wget http://people.canonical.com/~ogra/adbd
+cp adbd /usr/bin/adbd
+chmod 755 /usr/bin/adbd
+popd
+
 # dirty way to make some more space
 rm -rf /usr/share/doc/*
 
