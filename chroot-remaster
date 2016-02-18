@@ -357,8 +357,8 @@ apt-get -yf install
 # FIXME workaround for initramfs breaking :(
 rm /var/lib/dpkg/triggers/update-initramfs
 
-apt-get upgrade -y
-apt-get install -y --force-yes plasma-phone
+apt-get upgrade -y --allow-downgrades
+apt-get install -y --force-yes --allow-downgrades plasma-phone
 
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
