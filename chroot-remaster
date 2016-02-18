@@ -358,7 +358,7 @@ apt-get -yf install
 rm /var/lib/dpkg/triggers/update-initramfs
 
 apt-get upgrade -y --allow-downgrades
-apt-get install -y --force-yes --allow-downgrades plasma-phone
+apt-get install -y --force-yes plasma-phone
 
 apt-get remove -y mtp-server
 apt-get install -y mtp-server
