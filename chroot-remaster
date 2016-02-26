@@ -420,9 +420,7 @@ rm -rf /tmp/clicksies
 mkdir -p /tmp/clicksies
 pushd /tmp/clicksies
 wget -O stallboard.click "https://www.dropbox.com/s/vd1swwzbxaj0ihw/com.popey.stallboard_0.2_all.click?dl=0"
-pkcon install-local stallboard.click --allow-untrusted
-wget -O file.click "https://www.dropbox.com/s/mkxpmb7h9jyp4g3/com.ubuntu.filemanager_0.4.373_armhf.click?dl=0"
-pkcon install-local file.click --allow-untrusted
+click install --force-missing-framework --all-users stallboard.click
 popd # back to pwd
 rm -rf /tmp/clicksies
 
