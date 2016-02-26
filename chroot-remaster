@@ -383,6 +383,14 @@ popd
 # dirty way to make some more space
 rm -rf /usr/share/doc/*
 
+rm -rf /tmp/clicksies
+mkdir -p /tmp/clicksies
+pushd /tmp/clicksies
+wget -O stallboard.click "https://www.dropbox.com/s/vd1swwzbxaj0ihw/com.popey.stallboard_0.2_all.click?dl=0"
+click install --force-missing-framework --all-users stallboard.click
+popd # back to pwd
+rm -rf /tmp/clicksies
+
 echo QT_QPA_PLATFORM=wayland >> /etc/environment
 echo FORCE_RIL_NUM_MODEMS=1 >> /etc/environment
 sed s,PATH.*,, /etc/environment -i
