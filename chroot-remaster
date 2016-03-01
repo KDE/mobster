@@ -367,6 +367,8 @@ apt-get install -y mtp-server
 apt-get install -y ubuntu-calculator-app \
   ubuntu-filemanager-app \
   ubuntu-weather-app \
+  qml-module-qtlocation \
+  qml-module-qtpositioning \
   animal-farm \
   gstreamer1.0-plugins-ugly
 
@@ -390,6 +392,10 @@ wget -O stallboard.click "https://www.dropbox.com/s/vd1swwzbxaj0ihw/com.popey.st
 click install --force-missing-framework --all-users stallboard.click
 popd # back to pwd
 rm -rf /tmp/clicksies
+
+click-process com.popey.stallboard
+click-process com.ubuntu.calculator
+click-process com.ubuntu.music
 
 echo QT_QPA_PLATFORM=wayland >> /etc/environment
 echo FORCE_RIL_NUM_MODEMS=1 >> /etc/environment
