@@ -68,7 +68,7 @@ mkdir -p $EXTRACTDIR
 echo "=== syncing reference image  `date`"
 pushd $CACHEDIR
 apt-get install -y zsync psmisc
-zsync http://cdimage.ubuntu.com/ubuntu-touch/daily-preinstalled/20160219/xenial-preinstalled-touch-armhf.tar.gz.zsync
+zsync http://cdimage.ubuntu.com/ubuntu-touch/daily-preinstalled/current/xenial-preinstalled-touch-armhf.tar.gz.zsync
 img=$CACHEDIR/$DIST-preinstalled-touch-armhf.tar.gz
 popd
 
