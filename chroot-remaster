@@ -375,6 +375,8 @@ apt-get install -y ubuntu-calculator-app \
 
 apt-get -y clean
 
+apt-get -y remove telepathy-ofono telepathy-ofono-ril-mc-plugin
+
 # Replace built-in adbd with non-patched version
 pushd /tmp
 rm adbd || true
