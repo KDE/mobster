@@ -370,7 +370,8 @@ apt-get install -y ubuntu-calculator-app \
   qml-module-qtlocation \
   qml-module-qtpositioning \
   animal-farm \
-  gstreamer1.0-plugins-ugly
+  gstreamer1.0-plugins-ugly \
+  llsvplayer
 
 apt-get -y clean
 
